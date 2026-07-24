@@ -5,7 +5,7 @@ const Inquiry = require("../models/inquiry");
 // Create a new contact inquiry
 router.post("/", async (req, res) => {
      try{
-          const {name, company, email, phone, budget, projectDetails} = req.body;
+          const {name, company, email, phone, budget, details} = req.body;
           
           // Create a new inquiry instance
           const newInquiry = new Inquiry({
@@ -14,10 +14,10 @@ router.post("/", async (req, res) => {
                email,
                phone,
                budget,
-               projectDetails
+               details
           });
           await newInquiry.save();
-          return res.status(201).json({
+          return res.status(200).json({
                message: "Inquiry created successfully",
                inquiry: newInquiry
           });

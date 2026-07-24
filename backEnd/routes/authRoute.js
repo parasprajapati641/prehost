@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const User = require("../models/user");
-const subscriber = require("../models/subscriber");
+const Subscriber = require("../models/subscriber");
+const Admin = require("../models/admin")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const crypto = require("crypto");
+const sendEmail = require("../utils/sendEmail");
 
 const nodemailer = require("nodemailer");
 
@@ -75,7 +78,8 @@ router.post("/login", async (req, res) => {
           const token = jwt.sign({
                // userId: user._id,
                email: user.email,
-               name: user.name
+               firsName: user.firstName,
+               lastName : user.lastName
           }, process.env.JWT_SECRET, { expiresIn: "1h" });
           return res.status(200).json({
                message: "Login successful",
@@ -94,51 +98,104 @@ router.post("/login", async (req, res) => {
 // forgot password route
 router.post("/forgot-password", async (req, res) => {
      try {
-          const { email, newPassword } = req.body;
-
-          if (!email || !newPassword) {
-               return res.status(400).json({
-                    message: "Invalid email or password"
-               })
-          }
+          const { email } = req.body;
 
           const user = await User.findOne({ email });
+
           if (!user) {
-               return res.status(400).json({
-                    message: "User not found"
-               })
+               return res.status(404).json({
+                    message: "User not found",
+               });
           }
 
-          // old and new password should not be same
-          const isSamePassword = await bcrypt.compare(newPassword, user.password);
-          if (isSamePassword) {
-               return res.status(400).json({
-                    message: "New password cannot be same as old password"
-               })
-          }
+          // Generate Token
+          const resetToken = crypto.randomBytes(32).toString("hex");
 
-          //hash the new password
-          const salt = await bcrypt.genSalt(10);
-          const hashedPassword = await bcrypt.hash(newPassword, salt);
+          user.resetPasswordToken = resetToken;
 
-          //update the password in the database
-          user.password = hashedPassword;
+          user.resetPasswordExpires = Date.now() + 15 * 60 * 1000; // 15 minutes
+
           await user.save();
 
+          const resetURL = `http://localhost:8080/reset-password/${resetToken}`;
 
-          return res.status(200).json({
-               message: "Password updated successfully"
-          })
+          const message = `
+      <h2>Password Reset</h2>
 
-     }
-     catch (error) {
-          console.error("Forgot password error:", error);
-          return res.status(500).json({
-               message: "server error"
-          })
+      <p>Click the link below to reset your password.</p>
+
+      <a href="${resetURL}">
+        Reset Password
+      </a>
+    `;
+
+          await sendEmail(
+               user.email,
+               "Password Reset",
+               message
+          );
+
+          res.status(200).json({
+               message: "Reset link sent successfully",
+          });
+
+     } catch (error) {
+
+          console.log(error);
+
+          res.status(500).json({
+               message: "Server Error",
+          });
+
      }
 })
 
+
+// reset password
+router.post("/reset-password/:token", async (req, res) => {
+     try {
+          const { token } = req.params;
+          const { password } = req.body;
+
+          // Find user by token
+          const user = await User.findOne({
+               resetPasswordToken: token,
+               resetPasswordExpires: { $gt: Date.now() },
+          });
+
+          if (!user) {
+               return res.status(400).json({
+                    success: false,
+                    message: "Invalid or expired reset link",
+               });
+          }
+
+          // Hash new password
+          const hashedPassword = await bcrypt.hash(password, 10);
+
+          // Update password
+          user.password = hashedPassword;
+
+          // Remove token
+          user.resetPasswordToken = undefined;
+          user.resetPasswordExpires = undefined;
+
+          await user.save();
+
+          return res.status(200).json({
+               success: true,
+               message: "Password reset successfully",
+          });
+
+     } catch (error) {
+          console.log(error);
+
+          return res.status(500).json({
+               success: false,
+               message: "Server Error",
+          });
+     }
+});
 
 // Email subscribe route
 router.post("/subscribe", async (req, res) => {
@@ -152,7 +209,7 @@ router.post("/subscribe", async (req, res) => {
           }
 
           // Check if the email is already subscribed
-          const existingSubscriber = await subscriber.findOne({ email });
+          const existingSubscriber = await Subscriber.findOne({ email });
           if (existingSubscriber) {
                return res.status(400).json({
                     message: "Email is already subscribed"
@@ -160,7 +217,7 @@ router.post("/subscribe", async (req, res) => {
           }
 
           // save the email to the database
-          const newSubscriber = new subscriber({ email });
+          const newSubscriber = new Subscriber({ email });
           await newSubscriber.save();
 
           const transporter = nodemailer.createTransport({
@@ -192,5 +249,77 @@ router.post("/subscribe", async (req, res) => {
           })
      }
 })
+
+
+// create default admin route
+router.post("/create-admin", async (req, res) => {
+     try {
+
+          const { email, password } = req.body;
+
+          const existingAdmin = await Admin.findOne({ email });
+          if (existingAdmin) {
+               return res.status(400).json({
+                    message: "emali is already ragister"
+               })
+          }
+
+          // Hash the password before saving
+          const salt = await bcrypt.genSalt(10);
+          const hashedPassword = await bcrypt.hash(password, salt);
+
+          const admin = new Admin({ email, hashedPassword });
+          await admin.save();
+
+          return res.status(201).json({
+               message: "Admin created successfully"
+          })
+
+     } catch (error) {
+          console.error("Create admin error:", error);
+          return res.status(500).json({
+               message: "Server error"
+          })
+     }
+})
+
+// admin login
+router.post("/admin/login", async (req, res) => {
+     try {
+          const { email, password } = req.body;
+
+          // Check if user exists
+          const admin = await Admin.findOne({ email });
+          if (!admin) {
+               return res.status(400).json({
+                    message: "Invalid email or password"
+               });
+          }
+
+          // Compare password
+          const ismatch = await bcrypt.compare(password, admin.password);
+          if (!ismatch) {
+               return res.status(400).json({
+                    message: "Invalid email or password"
+               });
+          }
+
+          // Generate JWT token
+          const token = jwt.sign({
+               email: admin.email,
+          }, process.env.JWT_SECRET, { expiresIn: "1h" });
+          return res.status(200).json({
+               message: "Login successful",
+               token
+          });
+     }
+     catch (error) {
+          console.error("Login error:", error);
+          return res.status(500).json({
+               message: "Server error"
+          });
+     }
+})
+
 
 module.exports = router;

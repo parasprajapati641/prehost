@@ -26,10 +26,10 @@ const inquirySchema = new mongoose.Schema(
                trim: true
           },
           budget: {
-               type: Number,
+               type: String,
                required: true
           },
-          projectDetails: {
+          details: {
                type: String,
                required: true
           },
