@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Sparkles, Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import { useState } from "react";
 import api from "../../api/axios";
 
@@ -44,7 +44,7 @@ export function SiteFooter() {
     try {
       setLoading(true);
 
-      const response = await api.post("/user/subscribe", {
+      const response = await api.post("/subscriber", {
         email,
       });
 
@@ -68,9 +68,14 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)_1.2fr]">
           <div>
             <Link to="/" className="flex items-center gap-2.5">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--gradient-brand)] shadow-[var(--shadow-glow)]">
+              {/* <div className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--gradient-brand)] shadow-[var(--shadow-glow)]">
                 <Sparkles className="h-4 w-4 text-white" strokeWidth={2.5} />
-              </div>
+              </div> */}
+              <img
+                src="/PREHOSTlogo.svg"
+                alt="Prehost Technology"
+                className="h-8 w-auto sm:h-10 rounded-xl object-contain"
+              />
               <div className="leading-tight">
                 <div className="text-base font-bold">Prehost Technology</div>
                 <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">Since 2019</div>
@@ -81,11 +86,11 @@ export function SiteFooter() {
             </p>
             <div className="mt-6 flex items-center gap-2">
               {[
-                {
-                  Icon: Twitter,
-                  link: "#",
-                  label: "Twitter",
-                },
+                // {
+                //   Icon: Twitter,
+                //   link: "#",
+                //   label: "Twitter",
+                // },
                 {
                   Icon: Linkedin,
                   link: "https://www.linkedin.com/company/prehost-technology",
@@ -98,8 +103,13 @@ export function SiteFooter() {
                 },
                 {
                   Icon: Mail,
-                  link: "#",
+                  link: "https://mail.google.com/mail/?view=cm&fs=1&to=prehost9@gmail.com",
                   label: "Email",
+                },
+                {
+                  Icon: Instagram,
+                  link: "https://www.instagram.com/prehost_technology/",
+                  label: "Instagram"
                 },
               ].map(({ Icon, link, label }, i) => (
                 <a

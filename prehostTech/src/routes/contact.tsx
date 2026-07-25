@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { z } from "zod";
-import { Mail, Phone, MapPin, Clock, Send, Twitter, Linkedin, Github, Check } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, Twitter, Linkedin, Github, Check , Instagram} from "lucide-react";
 import { PageHero } from "@/components/site/Section";
 
 import api from "@/api/axios";
@@ -78,7 +78,7 @@ function ContactPage() {
         description="Tell us about your project. You'll get a scoped plan and a first-call slot within 48 hours."
       />
 
-      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32">
+      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-20">
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <motion.div
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
@@ -157,10 +157,10 @@ function ContactPage() {
 
               <div className="flex gap-2">
                 {[
-                  {
-                    Icon: Twitter,
-                    link: "#",
-                  },
+                  // {
+                  //   Icon: Twitter,
+                  //   link: "#",
+                  // },
                   {
                     Icon: Linkedin,
                     link: "https://www.linkedin.com/company/prehost-technology",
@@ -168,6 +168,11 @@ function ContactPage() {
                   {
                     Icon: Github,
                     link: "",
+                  },
+                  {
+                    Icon: Instagram,
+                    link: "https://www.instagram.com/prehost_technology/",
+                    label: "Instagram"
                   },
                 ].map(({ Icon, link }, i) => (
                   <a

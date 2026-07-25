@@ -32,7 +32,7 @@ function TechnologiesPage() {
         title={<>The <span className="text-gradient">modern engineering stack</span>, mastered</>}
         description="We use battle-tested tools by default and evaluate new ones carefully. Every choice has a reason your team can inspect."
       />
-      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32">
+      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">
         <div className="space-y-8">
           {TECH.map((group, i) => (
             <motion.div

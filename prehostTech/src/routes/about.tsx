@@ -27,9 +27,9 @@ const VALUES = [
 const TIMELINE = [
   { year: "2019", title: "Founded", desc: "Three engineers with a shared belief: software should be delivered, not promised." },
   { year: "2020", title: "First platform launch", desc: "Shipped our first enterprise ERP for a manufacturer in the Middle East." },
-  { year: "2021", title: "50 clients", desc: "Expanded across Europe and the GCC region." },
+  { year: "2021", title: "150+ clients", desc: "Expanded across Europe and the GCC region." },
   { year: "2023", title: "AI practice", desc: "Launched a dedicated AI & ML division serving a Fortune 500 partner." },
-  { year: "2025", title: "10 countries", desc: "100+ shipped products, 50+ active clients, four continents." },
+  { year: "2025", title: "30+ countries", desc: "100+ shipped products, 50+ active clients, four continents." },
   { year: "2026+", title: "Horizon", desc: "Agentic products, private AI infra and deeper vertical SaaS partnerships." },
 ];
 
@@ -42,7 +42,7 @@ function AboutPage() {
         description="Prehost Technology was founded in 2019 to give ambitious teams the delivery quality of a Silicon Valley studio with the reliability of an in-house team."
       />
 
-      <section className="mx-auto max-w-7xl px-4">
+      <section className="mx-auto max-w-7xl px-4 pt-5">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v, i) => (
             <motion.div

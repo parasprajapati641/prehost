@@ -74,7 +74,7 @@ function ForgotPasswordPage() {
         description="Enter your registered email address and we'll send you a password reset link."
       />
 
-      <section className="mx-auto max-w-7xl px-4 pb-24">
+      <section className="mx-auto max-w-7xl px-4 pb-24 pt-20">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}

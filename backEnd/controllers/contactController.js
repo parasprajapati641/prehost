@@ -1,14 +1,13 @@
-const express = require("express");
-const router = express.Router();
-const Inquiry = require("../models/inquiry");
+const contact = require("../models/contact");
 
-// Create a new contact inquiry
-router.post("/", async (req, res) => {
-     try{
-          const {name, company, email, phone, budget, details} = req.body;
-          
+
+// Create a new contact Controller
+exports.contact = async (req, res) => {
+     try {
+          const { name, company, email, phone, budget, details } = req.body;
+
           // Create a new inquiry instance
-          const newInquiry = new Inquiry({
+          const newContact = new contact({
                name,
                company,
                email,
@@ -16,10 +15,10 @@ router.post("/", async (req, res) => {
                budget,
                details
           });
-          await newInquiry.save();
+          await newContact.save();
           return res.status(200).json({
                message: "Inquiry created successfully",
-               inquiry: newInquiry
+               inquiry: newContact
           });
      }
      catch (error) {
@@ -28,7 +27,4 @@ router.post("/", async (req, res) => {
                message: "Server error"
           });
      }
-})
-
-
-module.exports = router;
+}

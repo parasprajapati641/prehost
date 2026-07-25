@@ -49,7 +49,7 @@ function IndustriesPage() {
         title={<>Vertical fluency, <span className="text-gradient">not templates</span></>}
         description="We bring hard-won context from 18 industries — regulations, workflows and success metrics — so we ship the right product, faster."
       />
-      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32">
+      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {INDUSTRIES.map((ind, i) => (
             <motion.div

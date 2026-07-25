@@ -40,7 +40,7 @@ function InsightsPage() {
         description="No thought-leadership fluff. Just the patterns, tools and mistakes behind our recent projects."
       />
 
-      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32">
+      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">
         <div className="mb-10 flex flex-wrap justify-center gap-2">
           {CATEGORIES.map((c) => (
             <button key={c} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground transition hover:border-primary/40 hover:text-foreground">
@@ -49,7 +49,7 @@ function InsightsPage() {
           ))}
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 ">
           {POSTS.map((p, i) => (
             <motion.article
               key={p.title}

@@ -41,7 +41,7 @@ function PortfolioPage() {
         title={<>Products shaping <span className="text-gradient">real industries</span></>}
         description="Every case study is measured, referenceable and delivered by a senior team you can call directly."
       />
-      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32">
+      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
             <motion.article

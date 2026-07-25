@@ -104,7 +104,7 @@ function SignupPage() {
                     description="Join Prehost Technology and start building with us."
                />
 
-               <section className="mx-auto max-w-7xl px-4 pb-24">
+               <section className="mx-auto max-w-7xl px-4 pb-24 pt-20">
                     <motion.div
                          initial={{ opacity: 0, y: 25 }}
                          animate={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ function SignupPage() {
 
                                         <input
                                              name="firstName"
-                                             placeholder="Krupa"
+                                             placeholder="First Name"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none focus:border-primary/60"
                                         />
                                    </div>
@@ -145,7 +145,7 @@ function SignupPage() {
 
                                         <input
                                              name="lastName"
-                                             placeholder="Korat"
+                                             placeholder="Last Name"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none focus:border-primary/60"
                                         />
                                    </div>

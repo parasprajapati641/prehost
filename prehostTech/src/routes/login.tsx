@@ -62,7 +62,6 @@ function LoginPage() {
                localStorage.setItem("user", JSON.stringify(response.data.user));
 
                navigate({ to: "/" });
-
           } catch (err: any) {
                alert(err.response?.data?.message || "Login failed");
           } finally {
@@ -82,7 +81,7 @@ function LoginPage() {
                     description="Sign in to continue using your account."
                />
 
-               <section className="mx-auto max-w-7xl px-4 pb-24">
+               <section className="mx-auto max-w-7xl px-4 pb-24 pt-20">
                     <motion.div
                          initial={{ opacity: 0, y: 20 }}
                          animate={{ opacity: 1, y: 0 }}

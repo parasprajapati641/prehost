@@ -36,7 +36,7 @@ function ServicesPage() {
         title={<>Full-stack partners for <span className="text-gradient">every step</span></>}
         description="Choose a service or combine several into a dedicated squad. Every engagement is led by a senior team that owns the outcome, not just the sprint."
       />
-      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32">
+      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">
         <div className="grid gap-4 md:grid-cols-2">
           {SERVICES.map((s, i) => (
             <motion.div

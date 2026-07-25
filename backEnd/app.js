@@ -8,7 +8,8 @@ const dbConnect = require('./config/dbConnect.js');
 const cors = require("cors");
 
 const authRoute = require("./routes/authRoute.js");
-const inquiryRoute = require("./routes/contact.js");
+const contactRoute = require("./routes/contactRoute.js");
+const subscriber = require("./routes/subscriberRoute.js")
 
 
 app.use(cors());
@@ -21,7 +22,8 @@ app.get('/', (req, res) =>{
 })
 
 app.use('/user', authRoute);
-app.use('/contact', inquiryRoute);
+app.use('/contact', contactRoute);
+app.use('/subscriber', subscriber)
 
 app.listen(process.env.PORT, () =>{
      console.log(`Server is running on port ${process.env.PORT}`);

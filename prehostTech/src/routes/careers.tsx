@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowRight, MapPin, Clock, Briefcase, GraduationCap, Heart, Globe2, Sparkles, Coffee } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Briefcase, GraduationCap, Heart, Sparkles, Coffee, Building2} from "lucide-react";
 import { PageHero } from "@/components/site/Section";
 
 export const Route = createFileRoute("/careers")({
@@ -29,10 +29,10 @@ const ROLES = [
 ];
 
 const BENEFITS = [
-  { icon: Globe2, title: "Fully remote", desc: "Work from anywhere. We're timezone-friendly by design." },
+  { icon: Building2, title: "Office-based", desc: "Work from our office and collaborate closely with the team" },
   { icon: Heart, title: "Real health cover", desc: "Comprehensive health & wellness stipend, wherever you live." },
-  { icon: GraduationCap, title: "Learning budget", desc: "$2,000/year for courses, books and conferences." },
-  { icon: Coffee, title: "Workspace stipend", desc: "Home office or coworking budget — your call." },
+  // { icon: GraduationCap, title: "Learning budget", desc: "$2,000/year for courses, books and conferences." },
+  { icon: Coffee, title: "Workspace stipend", desc: "office or coworking budget — your call." },
   { icon: Sparkles, title: "Equity for seniors", desc: "Meaningful ownership for staff and above." },
   { icon: Clock, title: "Sane hours", desc: "Sustainable pace. No hero mode, no permanent on-call." },
 ];
@@ -47,7 +47,7 @@ function CareersPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4 pt-5">
           <div>
             <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">Open positions</div>
             <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Roles we're hiring for</h2>
