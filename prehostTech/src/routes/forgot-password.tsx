@@ -19,9 +19,20 @@ export const Route = createFileRoute("/forgot-password")({
   component: ForgotPasswordPage,
 });
 
-const schema = z.object({
-  email: z.string().email("Enter a valid email"),
-});
+// const schema = z.object({
+//   email: z.string().email("Enter a valid email"),
+// });
+
+const schema = z
+  .object({
+    email: z.string().email("Enter a valid email"),
+    password: z.string().min(6, "Password must be at least 6 characters"),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    path: ["confirmPassword"],
+    message: "Passwords do not match",
+  });
 
 function ForgotPasswordPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -51,7 +62,12 @@ function ForgotPasswordPage() {
     setLoading(true);
 
     try {
-      await api.post("/user/forgot-password", result.data);
+      // await api.post("/user/forgot-password", result.data);
+
+      await api.post("/user/forgot-password", {
+        email: result.data.email,
+        password: result.data.password,
+      });
 
       setSent(true);
       e.currentTarget.reset();
@@ -71,7 +87,7 @@ function ForgotPasswordPage() {
             Reset Your <span className="text-gradient">Password</span>
           </>
         }
-        description="Enter your registered email address and we'll send you a password reset link."
+        description="Enter your registered email address and create a new password."
       />
 
       <section className="mx-auto max-w-7xl px-4 pb-24 pt-20">
@@ -85,11 +101,11 @@ function ForgotPasswordPage() {
             <div className="py-8 text-center">
               <CheckCircle className="mx-auto mb-4 h-14 w-14 text-green-500" />
               <h2 className="mb-2 text-2xl font-bold">
-                Email Sent Successfully
+                Password Reset Successfully
               </h2>
 
               <p className="text-muted-foreground">
-                Please check your inbox for the password reset link.
+                Your password has been updated successfully. Please login with your new password.
               </p>
 
               <Link
@@ -113,6 +129,8 @@ function ForgotPasswordPage() {
                   <input
                     type="email"
                     name="email"
+                    autoComplete="email"
+                    required
                     placeholder="john@example.com"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none focus:border-primary/60"
                   />
@@ -124,14 +142,51 @@ function ForgotPasswordPage() {
                   </p>
                 )}
               </div>
+              <div>
+                <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  New Password
+                </label>
 
+                <input
+                  type="password"
+                  name="password"
+                  autoComplete="new-password"
+                  placeholder="Enter new password"
+                  className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 px-4 text-sm outline-none focus:border-primary/60"
+                />
+
+                {errors.password && (
+                  <p className="mt-1 text-xs text-destructive">
+                    {errors.password}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  Confirm Password
+                </label>
+
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  autoComplete="new-password"
+                  placeholder="Confirm new password"
+                  className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 px-4 text-sm outline-none focus:border-primary/60"
+                />
+
+                {errors.confirmPassword && (
+                  <p className="mt-1 text-xs text-destructive">
+                    {errors.confirmPassword}
+                  </p>
+                )}
+              </div>
               <button
                 disabled={loading}
                 className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5"
               >
-                <Send className="h-4 w-4" />
+                {/* <Send className="h-4 w-4" /> */}
 
-                {loading ? "Sending..." : "Send Reset Link"}
+                {loading ? "Updating..." : "Reset Password"}
               </button>
 
               <p className="text-center text-sm text-muted-foreground">

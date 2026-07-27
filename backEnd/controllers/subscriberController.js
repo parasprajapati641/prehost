@@ -23,8 +23,8 @@ exports.Subscribe = async (req, res) => {
       });
     }
 
-    // Save subscriber
-    await Subscriber.create({ email });
+    // // Save subscriber
+    // await Subscriber.create({ email });
 
     // Email Template
     const subject = "Welcome to Prehost Technology";
@@ -44,8 +44,6 @@ exports.Subscribe = async (req, res) => {
           services, and offers.
         </p>
 
-        <br>
-
         <p>
           Regards,<br>
           <strong>Prehost Technology Team</strong>
@@ -55,10 +53,11 @@ exports.Subscribe = async (req, res) => {
 
     // Send Email
     await sendEmail(email, subject, html);
+    await Subscriber.create({ email });
 
     return res.status(201).json({
       success: true,
-      message: "Subscription successful. Welcome aboard!",
+      message: "You're successfully subscribed! Welcome to the Prehost community."
     });
   } catch (error) {
     console.error("Subscribe Error:", error);

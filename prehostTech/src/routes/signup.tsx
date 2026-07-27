@@ -73,7 +73,7 @@ function SignupPage() {
           setLoading(true);
 
           try {
-               await api.post("/user/register", {
+               const response = await api.post("/user/register", {
                     firstName: result.data.firstName,
                     lastName: result.data.lastName,
                     email: result.data.email,
@@ -83,7 +83,11 @@ function SignupPage() {
                     address: result.data.address,
                });
 
-               navigate({ to: "/login" });
+               localStorage.setItem("token", response.data.token);
+               localStorage.setItem("user", JSON.stringify(response.data.user));
+
+               // navigate({ to: "/" });
+               window.location.href = "/";
 
           } catch (err: any) {
                alert(err.response?.data?.message || "Signup failed");

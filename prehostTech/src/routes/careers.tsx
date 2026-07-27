@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowRight, MapPin, Clock, Briefcase, GraduationCap, Heart, Sparkles, Coffee, Building2} from "lucide-react";
+import { ArrowRight, MapPin, Clock, Briefcase, GraduationCap, Heart, Sparkles, Coffee, Building2 } from "lucide-react";
 import { PageHero } from "@/components/site/Section";
 
 export const Route = createFileRoute("/careers")({
@@ -108,9 +108,15 @@ function CareersPage() {
         <div className="glass-strong flex flex-col items-center gap-4 p-10 text-center md:p-16">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Apply now</h2>
           <p className="max-w-xl text-muted-foreground">Send your CV or portfolio. Every application is reviewed by a human, usually within a week.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white">
+          {/* <Link to="https://mail.google.com/mail/?view=cm&fs=1&to=prehost9@gmail.com" target="_blank" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white">
             Apply <ArrowRight className="h-4 w-4" />
-          </Link>
+          </Link> */}
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=prehost9@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white"
+          >Apply <ArrowRight className="h-4 w-4" /></a>
         </div>
       </section>
     </>

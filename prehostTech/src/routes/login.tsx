@@ -61,7 +61,8 @@ function LoginPage() {
                localStorage.setItem("token", response.data.token);
                localStorage.setItem("user", JSON.stringify(response.data.user));
 
-               navigate({ to: "/" });
+               // navigate({ to: "/" });
+               window.location.href = "/";
           } catch (err: any) {
                alert(err.response?.data?.message || "Login failed");
           } finally {

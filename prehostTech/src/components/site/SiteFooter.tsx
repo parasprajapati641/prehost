@@ -67,15 +67,15 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)_1.2fr]">
           <div>
-            <Link to="/" className="flex items-center gap-2.5">
+            <Link to="/" className="flex items-center gap-0">
               {/* <div className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--gradient-brand)] shadow-[var(--shadow-glow)]">
                 <Sparkles className="h-4 w-4 text-white" strokeWidth={2.5} />
               </div> */}
-              <img
-                src="/PREHOSTlogo.svg"
-                alt="Prehost Technology"
-                className="h-8 w-auto sm:h-10 rounded-xl object-contain"
-              />
+                <img
+                  src="/PREHOST.svg"
+                  alt="Prehost Technology"
+                  className="h-8 w-auto sm:h-10 rounded-xl object-contain"
+                />
               <div className="leading-tight">
                 <div className="text-base font-bold">Prehost Technology</div>
                 <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">Since 2019</div>

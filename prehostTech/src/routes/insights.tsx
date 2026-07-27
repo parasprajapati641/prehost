@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { PageHero } from "@/components/site/Section";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react"
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/insights")({
   component: InsightsPage,
 });
 
-const CATEGORIES = ["AI", "Development", "Design", "Marketing", "Business"] as const;
+const CATEGORIES = ["All", "AI", "Development", "Design", "Marketing", "Business"] as const;
 
 const POSTS = [
   { cat: "AI", title: "The RAG stack we actually run in production", excerpt: "Vector stores, retrieval strategies and prompt hardening — the parts that survived real users.", read: "9 min", palette: "from-indigo-500/60 to-fuchsia-400/40" },
@@ -29,9 +30,18 @@ const POSTS = [
   { cat: "Development", title: "Zero-downtime database migrations at scale", excerpt: "Playbook, tooling and the mistakes we no longer make.", read: "10 min", palette: "from-teal-500/60 to-green-400/40" },
   { cat: "Design", title: "Motion that earns its place", excerpt: "Framer Motion patterns we use to make dense UIs feel calm.", read: "6 min", palette: "from-sky-500/60 to-indigo-400/40" },
   { cat: "Business", title: "How we scope in 48 hours", excerpt: "The exact intake and estimation process behind our proposal SLA.", read: "5 min", palette: "from-cyan-500/60 to-blue-400/40" },
+  { cat: "AI", title: "From prototype to production: AI deployment lessons", excerpt: "The architecture, monitoring, and safeguards we rely on to ship reliable AI-powered applications.", read: "7 min", palette: "from-purple-500/60 to-indigo-400/40", },
+  { cat: "Development", title: "Building APIs that are fast, secure, and maintainable", excerpt: "Best practices for designing REST APIs with clean architecture, robust validation, and long-term scalability.", read: "6 min", palette: "from-cyan-500/60 to-blue-400/40", },
 ];
 
 function InsightsPage() {
+
+  const [selectedCategory, setSelectedCategory] = useState("All")
+
+  const filteredPosts =
+    selectedCategory === "All"
+      ? POSTS
+      : POSTS.filter((post) => post.cat === selectedCategory);
   return (
     <>
       <PageHero
@@ -42,15 +52,28 @@ function InsightsPage() {
 
       <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">
         <div className="mb-10 flex flex-wrap justify-center gap-2">
+          {/* {CATEGORIES.map((c) => (
+            <button key={c} onClick={() => setSelectedCategory(c)} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground transition hover:border-primary/40 hover:text-foreground">
+              {c}
+            </button>
+          ))} */}
+
           {CATEGORIES.map((c) => (
-            <button key={c} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground transition hover:border-primary/40 hover:text-foreground">
+            <button
+              key={c}
+              onClick={() => setSelectedCategory(c)}
+              className={`rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] transition ${selectedCategory === c
+                ? "border-primary bg-primary text-white"
+                : "border-white/10 bg-white/5 text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                }`}
+            >
               {c}
             </button>
           ))}
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 ">
-          {POSTS.map((p, i) => (
+          {filteredPosts.map((p, i) => (
             <motion.article
               key={p.title}
               initial={{ opacity: 0, y: 16 }}
