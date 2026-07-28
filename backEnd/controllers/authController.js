@@ -108,7 +108,6 @@ exports.login = async (req, res) => {
 }
 
 // forgot password Controller
-
 exports.forgotPassword = async (req, res) => {
      try {
           const { email, password } = req.body;
@@ -117,10 +116,22 @@ exports.forgotPassword = async (req, res) => {
 
           if (!user) {
                return res.status(404).json({
+                    success: false,
                     message: "User not found",
                });
           }
 
+          // Check if new password is same as old password
+          const isSamePassword = await bcrypt.compare(password, user.password);
+
+          if (isSamePassword) {
+               return res.status(400).json({
+                    success: false,
+                    message: "New password cannot be the same as your current password.",
+               });
+          }
+
+          // Hash new password
           const hashedPassword = await bcrypt.hash(password, 10);
 
           user.password = hashedPassword;
@@ -129,7 +140,7 @@ exports.forgotPassword = async (req, res) => {
 
           return res.status(200).json({
                success: true,
-               message: "Password reset successfully",
+               message: "Password reset successfully.",
           });
 
      } catch (error) {

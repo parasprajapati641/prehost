@@ -28,13 +28,45 @@ export const Route = createFileRoute("/signup")({
 
 const schema = z
      .object({
-          firstName: z.string().min(2, "First name is required"),
-          lastName: z.string().min(2, "Last name is required"),
-          email: z.string().email("Enter a valid email"),
-          phone: z.string().min(10, "Enter a valid phone number"),
+          firstName: z
+               .string()
+               .trim()
+               .min(2, "First name is required")
+               .regex(/^[A-Za-z]+$/, "Only letters are allowed"),
+
+          lastName: z
+               .string()
+               .trim()
+               .min(2, "Last name is required")
+               .regex(/^[A-Za-z]+$/, "Only letters are allowed"),
+
+          email: z
+               .string().
+               trim()
+               .min(1, "Email is required")
+               .email("Please enter a valid email address")
+               .regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email format"),
+
+          phone: z
+               .string()
+               .trim()
+               .regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit mobile number")
+               .optional()
+               .or(z.literal("")),
+
           gender: z.enum(["Male", "Female", "Other"]),
-          address: z.string().min(5, "Address is required"),
-          password: z.string().min(5, "Password must be at least 5 characters"),
+
+          address: z
+               .string()
+               .trim()
+               .min(5, "Address is required"),
+          password: z
+               .string()
+               .min(8, "Password must be at least 8 characters")
+               .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
+               .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+               .regex(/[0-9]/, "Password must contain at least one number")
+               .regex(/[@$!%*?&]/, "Password must contain at least one special character"),
           confirmPassword: z.string(),
      })
      .refine((data) => data.password === data.confirmPassword, {
@@ -50,6 +82,12 @@ function SignupPage() {
      const [errors, setErrors] = useState<Record<string, string>>({});
      const [loading, setLoading] = useState(false);
 
+     const clearError = (field: string) => {
+          setErrors((prev) => ({
+               ...prev,
+               [field]: "",
+          }));
+     };
      async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
           e.preventDefault();
 
@@ -115,7 +153,7 @@ function SignupPage() {
                          transition={{ duration: 0.4 }}
                          className="mx-auto max-w-md glass-strong p-8"
                     >
-                         <form onSubmit={onSubmit} className="space-y-5">
+                         <form onSubmit={onSubmit} noValidate className="space-y-5">
 
                               <div>
                                    <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
@@ -129,6 +167,7 @@ function SignupPage() {
                                              name="firstName"
                                              placeholder="First Name"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none focus:border-primary/60"
+                                             onChange={() => clearError("firstName")}
                                         />
                                    </div>
 
@@ -151,6 +190,7 @@ function SignupPage() {
                                              name="lastName"
                                              placeholder="Last Name"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none focus:border-primary/60"
+                                             onChange={() => clearError("lastName")}
                                         />
                                    </div>
 
@@ -176,11 +216,12 @@ function SignupPage() {
                                              name="email"
                                              placeholder="john@example.com"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none focus:border-primary/60"
+                                             onChange={() => clearError("email")}
                                         />
                                    </div>
 
                                    {errors.email && (
-                                        <p className="mt-1 text-xs text-destructive">
+                                        <p className="mt-1 text-xs text-red-500">
                                              {errors.email}
                                         </p>
                                    )}
@@ -195,6 +236,7 @@ function SignupPage() {
                                         name="phone"
                                         placeholder="9876543210"
                                         className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-primary/60"
+                                        onChange={() => clearError("phone")}
                                    />
 
                                    {errors.phone && (
@@ -212,17 +254,17 @@ function SignupPage() {
                                    <div className="flex gap-6">
 
                                         <label className="flex items-center gap-2">
-                                             <input type="radio" name="gender" value="Male" />
+                                             <input type="radio" name="gender" value="Male" onChange={() => clearError("gender")} />
                                              Male
                                         </label>
 
                                         <label className="flex items-center gap-2">
-                                             <input type="radio" name="gender" value="Female" />
+                                             <input type="radio" name="gender" value="Female" onChange={() => clearError("gender")} />
                                              Female
                                         </label>
 
                                         <label className="flex items-center gap-2">
-                                             <input type="radio" name="gender" value="Other" />
+                                             <input type="radio" name="gender" value="Other" onChange={() => clearError("gender")}/>
                                              Other
                                         </label>
 
@@ -245,6 +287,7 @@ function SignupPage() {
                                         rows={4}
                                         placeholder="Enter your address"
                                         className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-primary/60"
+                                        onChange={() => clearError("Address")}
                                    />
 
                                    {errors.address && (
@@ -269,6 +312,7 @@ function SignupPage() {
                                              name="password"
                                              placeholder="********"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-11 text-sm outline-none focus:border-primary/60"
+                                             onChange={() => clearError("password")}
                                         />
 
                                         <button
@@ -306,6 +350,7 @@ function SignupPage() {
                                              name="confirmPassword"
                                              placeholder="********"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-11 text-sm outline-none focus:border-primary/60"
+                                             onChange={() => clearError("confirmPassword")}
                                         />
 
                                         <button

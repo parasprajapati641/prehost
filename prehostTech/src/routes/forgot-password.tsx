@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { z } from "zod";
-import { Mail, Send, CheckCircle } from "lucide-react";
+import { Mail, Send, CheckCircle, EyeOff, Eye, Lock } from "lucide-react";
 import { PageHero } from "@/components/site/Section";
 import api from "@/api/axios";
 
@@ -25,8 +25,19 @@ export const Route = createFileRoute("/forgot-password")({
 
 const schema = z
   .object({
-    email: z.string().email("Enter a valid email"),
-    password: z.string().min(6, "Password must be at least 6 characters"),
+    email: z
+      .string().
+      trim()
+      .min(1, "Email is required")
+      .email("Please enter a valid email address")
+      .regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email format"),
+    password: z
+      .string()
+      .min(8, "Password must be at least 8 characters")
+      .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
+      .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+      .regex(/[0-9]/, "Password must contain at least one number")
+      .regex(/[@$!%*?&]/, "Password must contain at least one special character"),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
@@ -38,6 +49,15 @@ function ForgotPasswordPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const clearError = (field: string) => {
+    setErrors((prev) => ({
+      ...prev,
+      [field]: "",
+    }));
+  };
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -116,7 +136,7 @@ function ForgotPasswordPage() {
               </Link>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-5">
+            <form onSubmit={onSubmit} noValidate className="space-y-5">
 
               <div>
                 <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
@@ -133,6 +153,7 @@ function ForgotPasswordPage() {
                     required
                     placeholder="john@example.com"
                     className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none focus:border-primary/60"
+                    onChange={() => clearError("email")}
                   />
                 </div>
 
@@ -142,18 +163,29 @@ function ForgotPasswordPage() {
                   </p>
                 )}
               </div>
-              <div>
+              <div >
                 <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                   New Password
                 </label>
+                <div className="relative">
+                  <Lock className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    autoComplete="new-password"
+                    placeholder="Enter new password"
+                    className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-11 text-sm outline-none transition focus:border-primary/60"
+                    onChange={() => clearError("password")}
+                  />
 
-                <input
-                  type="password"
-                  name="password"
-                  autoComplete="new-password"
-                  placeholder="Enter new password"
-                  className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 px-4 text-sm outline-none focus:border-primary/60"
-                />
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2">
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4 text-muted-foreground" />
+                    ) : (
+                      <Eye className="h-4 w-4 text-muted-foreground" />
+                    )}
+                  </button>
+                </div>
 
                 {errors.password && (
                   <p className="mt-1 text-xs text-destructive">
@@ -165,14 +197,25 @@ function ForgotPasswordPage() {
                 <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                   Confirm Password
                 </label>
+                <div className="relative">
+                  <Lock className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
 
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  autoComplete="new-password"
-                  placeholder="Confirm new password"
-                  className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 px-4 text-sm outline-none focus:border-primary/60"
-                />
+                  <input
+                    type={showConfirm ? "text" : "password"}
+                    name="confirmPassword"
+                    autoComplete="new-password"
+                    placeholder="Confirm new password"
+                    className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-11 text-sm outline-none transition focus:border-primary/60"
+                    onChange={() => clearError("confirmPassword")}
+                  />
+                  <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-4 top-1/2 -translate-y-1/2">
+                    {showConfirm ? (
+                      <EyeOff className="h-4 w-4 text-muted-foreground" />
+                    ) : (
+                      <Eye className="h-4 w-4 text-muted-foreground" />
+                    )}
+                  </button>
+                </div>
 
                 {errors.confirmPassword && (
                   <p className="mt-1 text-xs text-destructive">

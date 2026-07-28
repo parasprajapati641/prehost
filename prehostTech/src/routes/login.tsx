@@ -20,8 +20,8 @@ export const Route = createFileRoute("/login")({
 });
 
 const schema = z.object({
-     email: z.string().email("Enter a valid email"),
-     password: z.string().min(6, "Password must be at least 6 characters"),
+     email: z.string().trim().min(1, "Email is required").email("Please enter a valid email address").regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email format"),
+     password: z.string().min(8, "Password must be at least 8 characters"),
 });
 
 function LoginPage() {
@@ -30,6 +30,13 @@ function LoginPage() {
      const [showPassword, setShowPassword] = useState(false);
      const [errors, setErrors] = useState<Record<string, string>>({});
      const [loading, setLoading] = useState(false);
+
+     const clearError = (field: string) => {
+          setErrors((prev) => ({
+               ...prev,
+               [field]: "",
+          }));
+     };
 
      async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
           e.preventDefault();
@@ -89,7 +96,7 @@ function LoginPage() {
                          transition={{ duration: 0.4 }}
                          className="mx-auto max-w-md glass-strong p-8"
                     >
-                         <form onSubmit={onSubmit} className="space-y-5">
+                         <form onSubmit={onSubmit} noValidate className="space-y-5">
 
                               {/* Email */}
 
@@ -106,6 +113,7 @@ function LoginPage() {
                                              name="email"
                                              placeholder="john@example.com"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary/60"
+                                             onChange={() => clearError("email")}
                                         />
                                    </div>
 
@@ -131,6 +139,7 @@ function LoginPage() {
                                              name="password"
                                              placeholder="********"
                                              className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-11 text-sm outline-none transition focus:border-primary/60"
+                                             onChange={() => clearError("password")}
                                         />
 
                                         <button

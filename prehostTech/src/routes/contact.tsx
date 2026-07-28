@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin, Clock, Send, Twitter, Linkedin, Github, Check , In
 import { PageHero } from "@/components/site/Section";
 
 import api from "@/api/axios";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -22,12 +23,12 @@ export const Route = createFileRoute("/contact")({
 });
 
 const schema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(80),
+  name: z.string().regex(/^[A-Za-z ]+$/, "Invalid Name").trim().min(2, "Please enter your name").max(80),
   company: z.string().trim().max(120).optional(),
-  email: z.string().trim().email("Enter a valid email").max(200),
-  phone: z.string().trim().max(40).optional(),
+  email: z.string().trim().min(1, "Email is required").email("Enter a valid email").max(200),
+  phone: z.string().trim().regex(/^[0-9+\-\s()]{8,20}$/, "Invalid phone number").optional().or(z.literal("")),
   budget: z.string().trim().max(40).optional(),
-  details: z.string().trim().min(10, "Tell us a bit more (10+ chars)").max(2000),
+  details: z.string().trim().min(10, "Tell us a bit more (10+ chars)").regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email format").max(2000),
 });
 
 const BUDGETS = ["<$10k", "$10k – $25k", "$25k – $50k", "$50k – $100k", "$100k+"];
@@ -66,7 +67,7 @@ function ContactPage() {
       }
     } catch (error) {
       console.error(error);
-      alert("Failed to send message");
+      toast("Failed to send message");
     }
   }
 
@@ -167,7 +168,7 @@ function ContactPage() {
                   },
                   {
                     Icon: Github,
-                    link: "",
+                    link: "https://github.com/parasprajapati641",
                   },
                   {
                     Icon: Instagram,

@@ -98,7 +98,7 @@ export function SiteFooter() {
                 },
                 {
                   Icon: Github,
-                  link: "#",
+                  link: "https://github.com/parasprajapati641",
                   label: "GitHub",
                 },
                 {
