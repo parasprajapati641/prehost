@@ -45,9 +45,9 @@ function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.03 }}
-              className="glass p-8"
+              className="glass p-8 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary hover:border-0 transition hover:-translate-y-0.5"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-brand)] text-white shadow-[0_10px_30px_-8px_rgba(37,99,235,0.7)]">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-brand)] text-primary shadow-[0_10px_30px_-8px_rgba(37,99,235,0.7)]">
                 <s.icon className="h-5 w-5" />
               </div>
               <h2 className="mt-5 text-xl font-semibold">{s.title}</h2>
@@ -55,7 +55,7 @@ function ServicesPage() {
               <ul className="mt-5 grid gap-1.5 sm:grid-cols-2">
                 {s.items.map((it) => (
                   <li key={it} className="flex items-center gap-2 text-sm text-foreground/90">
-                    <Check className="h-4 w-4 shrink-0 text-accent" /> {it}
+                    <Check className="h-4 w-4 shrink-0 text-primary" /> {it}
                   </li>
                 ))}
               </ul>
@@ -63,7 +63,7 @@ function ServicesPage() {
           ))}
         </div>
         <div className="mt-14 text-center">
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_-12px_rgba(37,99,235,0.7)]">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-primary shadow-[0_16px_40px_-12px_rgba(37,99,235,0.7)] transition hover:-translate-y-0.5">
             Discuss your project <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

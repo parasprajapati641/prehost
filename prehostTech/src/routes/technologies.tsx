@@ -41,15 +41,15 @@ function TechnologiesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="glass p-8"
+              className="glass p-8 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary hover:border-0 transition hover:-translate-y-0.5"
             >
               <div className="flex items-center justify-between gap-4">
                 <h2 className="text-xl font-semibold">{group.cat}</h2>
-                <div className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">{group.items.length} tools</div>
+                <div className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">{group.items.length} tools</div>
               </div>
               <div className="mt-6 flex flex-wrap gap-2">
                 {group.items.map((t) => (
-                  <span key={t} className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-foreground/90 transition hover:border-primary/40 hover:bg-primary/10">
+                  <span key={t} className="rounded-full border border-primary/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-foreground/90 transition hover:border-primary/40 hover:bg-primary/10">
                     {t}
                   </span>
                 ))}

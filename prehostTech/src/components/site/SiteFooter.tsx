@@ -62,7 +62,7 @@ export function SiteFooter() {
     }
   };
   return (
-    <footer className="relative mt-32 border-t border-white/10">
+    <footer className="relative mt-0 border-t border-white/10">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
       <div className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)_1.2fr]">
@@ -72,14 +72,14 @@ export function SiteFooter() {
                 <Sparkles className="h-4 w-4 text-white" strokeWidth={2.5} />
               </div> */}
                 <img
-                  src="/PREHOST.svg"
+                  src="/PREHOSTlogo.png"
                   alt="Prehost Technology"
                   className="h-8 w-auto sm:h-10 rounded-xl object-contain"
                 />
-              <div className="leading-tight">
+              {/* <div className="leading-tight">
                 <div className="text-base font-bold">Prehost Technology</div>
                 <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">Since 2019</div>
-              </div>
+              </div> */}
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Transforming ideas into powerful digital solutions. Software, AI, cloud, and design partners to ambitious teams worldwide.
@@ -118,7 +118,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition hover:border-primary/40 hover:text-foreground"
+                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5 text-primary transition hover:bg-primary hover:text-white "
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -128,7 +128,7 @@ export function SiteFooter() {
 
           {COLUMNS.map((col) => (
             <div key={col.heading}>
-              <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{col.heading}</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">{col.heading}</h4>
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((l) => (
                   <li key={l.label}>
@@ -142,9 +142,9 @@ export function SiteFooter() {
           ))}
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Newsletter</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">Newsletter</h4>
             <p className="mt-4 text-sm text-muted-foreground">Insights on AI, product & engineering — monthly.</p>
-            <form className="mt-4 flex overflow-hidden rounded-full border border-white/10 bg-white/5" onSubmit={handleSubscribe}>
+            <form className="mt-4 flex overflow-hidden rounded-full border border-primary bg-white/5" onSubmit={handleSubscribe}>
               <input
                 type="email"
                 required
@@ -153,7 +153,7 @@ export function SiteFooter() {
                 placeholder="you@company.com"
                 className="w-full bg-transparent px-4 py-2.5 text-sm outline-none placeholder:text-muted-foreground/70"
               />
-              <button type="submit" className="shrink-0 bg-[var(--gradient-brand)] px-4 text-sm font-semibold text-white">
+              <button type="submit" className="shrink-0 bg-[var(--gradient-brand)] px-4 text-sm font-semibold text-primary">
                 {loading ? "Joining..." : "Join"}
               </button>
             </form>

@@ -52,55 +52,73 @@
 :root {
   --radius: 0.875rem;
 
-  /* Dark by default — Prehost Technology premium theme */
-  --background: oklch(0.13 0.04 265);
-  --foreground: oklch(0.98 0.005 240);
+  /* Porto Light Theme */
 
-  --surface: oklch(0.17 0.045 265);
-  --surface-elevated: oklch(0.21 0.05 265);
+  --background: oklch(1 0 0); /* #FFFFFF */
+  --foreground:oklch(0.27 0.01 255); /* #212529 */
+ 
 
-  --card: oklch(0.17 0.045 265 / 60%);
-  --card-foreground: oklch(0.98 0.005 240);
+  --surface: oklch(0.985 0.002 255); /* #F7F7F7 */
+  --surface-elevated: oklch(1 0 0);
 
-  --popover: oklch(0.16 0.045 265);
-  --popover-foreground: oklch(0.98 0.005 240);
+  --card: oklch(1 0 0 / 98%);
+  --card-foreground: var(--foreground);
 
-  --brand: oklch(0.58 0.22 260);         /* #2563EB */
-  --brand-glow: oklch(0.82 0.16 220);    /* #00D4FF */
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
 
-  --primary: oklch(0.58 0.22 260);
-  --primary-foreground: oklch(0.99 0 0);
+  /* Brand */
+  --brand: oklch(0.50 0.11 230); /* #176381 */
+  --brand-glow: oklch(0.55 0.14 245); /* #005E8A */
 
-  --secondary: oklch(0.24 0.05 265);
-  --secondary-foreground: oklch(0.98 0.005 240);
+  --primary: var(--brand);
+  --primary-foreground: oklch(1 0 0);
 
-  --muted: oklch(0.22 0.04 265);
-  --muted-foreground: oklch(0.72 0.02 255);
+  --secondary: oklch(0.55 0.14 245); /* #005E8A */
+  --secondary-foreground: oklch(1 0 0);
 
-  --accent: oklch(0.82 0.16 220);
-  --accent-foreground: oklch(0.13 0.04 265);
+  --muted: oklch(0.975 0.003 255); /* #F7F7F7 */
+  --muted-foreground: oklch(0.55 0.015 255);
 
-  --destructive: oklch(0.62 0.24 27);
-  --destructive-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.94 0.03 240);
+  --accent-foreground: var(--secondary);
 
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.65 0.2 250);
+  --destructive: oklch(0.63 0.22 25); /* #DC3545 */
+  --destructive-foreground: oklch(1 0 0);
 
-  --chart-1: oklch(0.58 0.22 260);
-  --chart-2: oklch(0.82 0.16 220);
-  --chart-3: oklch(0.70 0.20 300);
-  --chart-4: oklch(0.75 0.18 180);
-  --chart-5: oklch(0.68 0.22 20);
+  --border: oklch(0.90 0.005 255); /* #DEE2E6 */
+  --input: oklch(0.97 0.003 255);
+  --ring: var(--brand);
 
-  /* Gradients & effects */
-  --gradient-brand: linear-gradient(135deg, oklch(0.58 0.22 260), oklch(0.82 0.16 220));
-  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.58 0.22 260 / 0.35), transparent 70%);
-  --gradient-mesh: radial-gradient(at 20% 20%, oklch(0.58 0.22 260 / 0.25) 0px, transparent 50%),
-                   radial-gradient(at 80% 0%, oklch(0.82 0.16 220 / 0.18) 0px, transparent 50%),
-                   radial-gradient(at 0% 100%, oklch(0.70 0.20 300 / 0.18) 0px, transparent 50%);
-  --shadow-glow: 0 0 60px oklch(0.58 0.22 260 / 0.35);
-  --shadow-elevated: 0 24px 60px -20px oklch(0 0 0 / 0.6), 0 0 0 1px oklch(1 0 0 / 0.06);
+  /* Charts */
+  --chart-1: var(--brand);
+  --chart-2: var(--secondary);
+  --chart-3: oklch(0.68 0.18 145); /* Green */
+  --chart-4: oklch(0.72 0.16 60);  /* Orange */
+  --chart-5: oklch(0.62 0.20 20);  /* Red */
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(
+    135deg,
+    oklch(0.50 0.11 230)
+  );
+
+  --gradient-hero: radial-gradient(
+    ellipse 80% 50% at 50% -10%,
+    oklch(0.66 0.18 240 / 0.12),
+    transparent 70%
+  );
+
+  --gradient-mesh:
+    radial-gradient(at 20% 20%, oklch(0.66 0.18 240 / 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, oklch(0.55 0.14 245 / 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, oklch(0.68 0.18 145 / 0.05) 0px, transparent 50%);
+
+  --shadow-glow: 0 0 35px oklch(0.66 0.18 240 / 0.18);
+
+  --shadow-elevated:
+    0 16px 40px -18px oklch(0 0 0 / 0.10),
+    0 0 0 1px oklch(0 0 0 / 0.05);
 }
 
 @layer base {
@@ -121,9 +139,16 @@
   ::selection { background: oklch(0.58 0.22 260 / 0.4); }
 }
 
-@utility glass {
+/* @utility glass {
   background: linear-gradient(180deg, oklch(1 0 0 / 0.05), oklch(1 0 0 / 0.02));
   border: 1px solid oklch(1 0 0 / 0.08);
+  backdrop-filter: blur(20px) saturate(140%);
+  border-radius: var(--radius-2xl);
+} */
+
+@utility glass {
+  background: linear-gradient(180deg, oklch(1 0 0 / 0.05), oklch(1 0 0 / 0.02));
+  border: 1px solid var(--primary);
   backdrop-filter: blur(20px) saturate(140%);
   border-radius: var(--radius-2xl);
 }

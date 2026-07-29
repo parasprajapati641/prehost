@@ -94,7 +94,7 @@ function InsightsPage() {
                 <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
                 <div className="mt-5 flex items-center justify-between text-xs">
                   <span className="text-muted-foreground">{p.read} read</span>
-                  <span className="inline-flex items-center gap-1 font-semibold text-accent">Read <ArrowRight className="h-3.5 w-3.5" /></span>
+                  <span className="inline-flex items-center gap-1 font-semibold text-primary">Read <ArrowRight className="h-3.5 w-3.5" /></span>
                 </div>
               </div>
             </motion.article>

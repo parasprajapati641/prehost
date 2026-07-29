@@ -221,7 +221,7 @@ function Hero() {
           initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.3 }}
           className="mt-9 flex flex-wrap items-center justify-center gap-3"
         >
-          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_-12px_rgba(37,99,235,0.7)] transition hover:-translate-y-0.5">
+          <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold shadow-[0_16px_40px_-12px_rgba(37,99,235,0.7)] transition hover:-translate-y-0.5">
             Book Free Consultation
             <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
           </Link>
@@ -276,7 +276,7 @@ function Marquee() {
 
 function Services() {
   return (
-    <section id="services" className="relative py-24 md:py-32">
+    <section id="services" className="relative py-10 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="What we do"
@@ -291,10 +291,15 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="group glass relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-white/20"
+              className="group glass relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-white/20 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.3)] border-primary"
             >
-              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/20 opacity-0 blur-3xl transition group-hover:opacity-100" />
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-[var(--gradient-brand)] text-white shadow-[0_8px_24px_-8px_rgba(37,99,235,0.7)]">
+              {/* <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40  rounded-full bg-primary/55 opacity-0 blur-3xl transition group-hover:opacity-100" /> */}
+              <>
+                <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl opacity-0 transition group-hover:opacity-100 " />
+
+                <div className="pointer-events-none absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-sky-400/20 blur-3xl opacity-0 transition group-hover:opacity-100" />
+              </>
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-[var(--gradient-brand)] shadow-[0_8px_24px_-8px_rgba(37,99,235,0.7)] text-primary ">
                 <s.icon className="h-5 w-5" />
               </div>
               <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
@@ -302,7 +307,7 @@ function Services() {
               <ul className="mt-4 space-y-1.5">
                 {s.items.map((it) => (
                   <li key={it} className="flex items-center gap-2 text-xs text-foreground/80">
-                    <Check className="h-3.5 w-3.5 text-accent" /> {it}
+                    <Check className="h-3.5 w-3.5 text-primary" /> {it}
                   </li>
                 ))}
               </ul>
@@ -316,7 +321,7 @@ function Services() {
 
 function Industries() {
   return (
-    <section id="industries" className="relative py-24 md:py-32">
+    <section id="industries" className="relative py-10 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="Industries we serve"
@@ -331,9 +336,9 @@ function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: (i % 6) * 0.03 }}
-              className="group glass flex flex-col items-center justify-center gap-2 p-5 text-center transition hover:-translate-y-0.5 hover:border-primary/40"
+              className="group glass flex flex-col items-center justify-center gap-2 p-5 text-center transition hover:-translate-y-0.5 border-primary/40 hover:border-0 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
             >
-              <div className="grid h-10 w-10 place-items-center rounded-lg bg-white/5 text-accent transition group-hover:bg-primary/15 group-hover:text-primary">
+              <div className="grid h-10 w-10 place-items-center rounded-lg bg-white/5 text-primary transition group-hover:bg-primary/15 group-hover:text-primary">
                 <ind.icon className="h-5 w-5" />
               </div>
               <div className="text-xs font-medium">{ind.name}</div>
@@ -347,14 +352,14 @@ function Industries() {
 
 function WhyUs() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-10 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="Why Prehost"
           title={<>Engineering partners you can <span className="text-gradient">bet the roadmap on</span></>}
           description="Senior-heavy squads, transparent delivery and a bias for shipping — the operating model that top teams choose."
         />
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3 ">
           {WHY.map((w, i) => (
             <motion.div
               key={w.title}
@@ -362,9 +367,9 @@ function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="glass flex gap-4 p-6"
+              className="group glass flex gap-4 p-6 hover:border-white transition hover:-translate-y-0.5 border-primary shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
             >
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-accent">
+              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-primary">
                 <w.icon className="h-5 w-5" />
               </div>
               <div className="min-w-0">
@@ -396,9 +401,9 @@ function Technologies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="glass p-6"
+              className="glass p-6 tran hover:border-primary transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
             >
-              <div className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">{cat}</div>
+              <div className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">{cat}</div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {list.map((t) => (
                   <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-foreground/90">
@@ -416,7 +421,7 @@ function Technologies() {
 
 function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-24 md:py-32">
+    <section id="portfolio" className="relative py-10 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="Recent work"
@@ -448,7 +453,7 @@ function Portfolio() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold hover:bg-white/10">
+          <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold hover:bg-white/10 ">
             View all case studies <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -459,7 +464,7 @@ function Portfolio() {
 
 function Process() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-10 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="How we work"
@@ -474,9 +479,9 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.03 }}
-              className="glass relative overflow-hidden p-6"
+              className="glass relative overflow-hidden p-6 border-secondary transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)] hover:border-0"
             >
-              <div className="text-4xl font-bold tracking-tight text-gradient">{p.step}</div>
+              <div className="text-4xl font-bold tracking-tight text-primary">{p.step}</div>
               <div className="mt-3 text-base font-semibold">{p.title}</div>
               <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
             </motion.div>
@@ -489,7 +494,7 @@ function Process() {
 
 function Testimonials() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-10 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="Client stories"
@@ -503,14 +508,14 @@ function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="glass p-8"
+              className="glass p-8 border-primary"
             >
-              <div className="flex gap-1 text-accent">
+              <div className="flex gap-1 text-primary">
                 {Array.from({ length: 5 }).map((_, j) => <Star key={j} className="h-4 w-4 fill-current" />)}
               </div>
               <blockquote className="mt-4 text-lg leading-snug text-foreground/95">"{t.quote}"</blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-full bg-[var(--gradient-brand)] text-sm font-bold text-white">
+                <div className="grid h-10 w-10 place-items-center rounded-full bg-primary text-sm font-bold text-white">
                   {t.name.split(" ").map(n => n[0]).join("")}
                 </div>
                 <div>
@@ -528,14 +533,14 @@ function Testimonials() {
 
 function Timeline() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-10 md:py-10">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader
           eyebrow="Our journey"
           title={<>A short history, a <span className="text-gradient">long horizon</span></>}
         />
         <div className="relative mt-14">
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/15 to-transparent md:block" />
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-primary to-transparent md:block" />
           <div className="space-y-6 md:space-y-10">
             {TIMELINE.map((t, i) => (
               <motion.div
@@ -547,7 +552,7 @@ function Timeline() {
                 className={`grid gap-4 md:grid-cols-2 md:gap-10 ${i % 2 ? "md:[&>*:first-child]:col-start-2" : ""}`}
               >
                 <div className={`glass p-6 ${i % 2 ? "md:text-left" : "md:text-right"}`}>
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t.year}</div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{t.year}</div>
                   <div className="mt-2 text-lg font-semibold">{t.title}</div>
                   <p className="mt-1 text-sm text-muted-foreground">{t.desc}</p>
                 </div>
@@ -562,20 +567,22 @@ function Timeline() {
 
 function FAQSection() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-10 md:py-10">
       <div className="mx-auto max-w-4xl px-4">
         <SectionHeader
           eyebrow="Questions"
           title={<>Frequently <span className="text-gradient">asked</span></>}
         />
-        <div className="mt-12 divide-y divide-white/10 rounded-3xl border border-white/10 bg-white/[0.02]">
+        <div className="mt-12 overflow-hidden rounded-3xl border border-border bg-card shadow-lg">
           {FAQ.map((f) => (
-            <details key={f.q} className="group p-6 open:bg-white/[0.03]">
-              <summary className="flex cursor-pointer items-center justify-between gap-6 text-left text-base font-semibold">
+            <details className="group border-b border-border last:border-b-0 transition-all duration-300 open:bg-primary/5">
+              <summary className="flex cursor-pointer items-center justify-between gap-6 px-6 py-6 font-semibold transition-colors duration-300 hover:bg-primary/5">
                 {f.q}
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 text-muted-foreground transition group-open:rotate-45">+</span>
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-primary/30 bg-primary/5 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-open:rotate-45 group-open:bg-primary group-open:text-white">
+                  +
+                </span>    
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+              <p className="mt-2 mb-2 px-6 max-w-3xl text-[15px] leading-7 text-muted-foreground">{f.a}</p>
             </details>
           ))}
         </div>
@@ -586,23 +593,23 @@ function FAQSection() {
 
 function CTA() {
   return (
-    <section className="relative py-24 md:py-32">
+    <section className="relative py-10 md:py-10">
       <div className="mx-auto max-w-5xl px-4">
         <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-[var(--gradient-brand)] p-10 text-center md:p-16">
           <div className="pointer-events-none absolute inset-0 grid-pattern opacity-25" />
           <div className="pointer-events-none absolute -inset-32 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.35),transparent_60%)]" />
           <div className="relative">
-            <h2 className="text-balance text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
               Have an idea? Let's build it right.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-pretty text-white/85 md:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-pretty text-foreground/85 md:text-lg">
               Book a free 30-minute consultation with our engineering leads. We'll return a scoped plan within 48 hours.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-lg hover:-translate-y-0.5">
                 Book Free Consultation <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/20">
+              <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-secondary bg-white/10 px-6 py-3 text-sm font-semibold text-primary backdrop-blur hover:bg-white/20">
                 See our work
               </Link>
             </div>

@@ -58,9 +58,9 @@ function IndustriesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: i * 0.02 }}
-              className="glass group p-6 transition hover:-translate-y-0.5 hover:border-primary/40"
+              className="glass group p-6 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] hover:border-0 transition hover:-translate-y-0.5"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-accent transition group-hover:bg-primary/20 group-hover:text-primary">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-primary transition group-hover:bg-primary group-hover:text-white">
                 <ind.icon className="h-5 w-5" />
               </div>
               <div className="mt-4 text-base font-semibold">{ind.name}</div>

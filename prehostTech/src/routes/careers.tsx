@@ -52,7 +52,7 @@ function CareersPage() {
             <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">Open positions</div>
             <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Roles we're hiring for</h2>
           </div>
-          <p className="text-sm text-muted-foreground">Don't see your role? <a href="#apply" className="text-accent hover:underline">Send an open application.</a></p>
+          <p className="text-sm text-muted-foreground">Don't see your role? <a href="#apply" className="text-primary hover:underline">Send an open application.</a></p>
         </div>
         <div className="grid gap-3">
           {ROLES.map((r, i) => (
@@ -63,7 +63,7 @@ function CareersPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.02 }}
-              className="glass group flex items-center justify-between gap-4 p-5 transition hover:-translate-y-0.5 hover:border-primary/40"
+              className="glass group flex items-center justify-between gap-4 p-5 transition hover:-translate-y-0.5 hover:border-0 border-primary"
             >
               <div className="min-w-0">
                 <div className="text-base font-semibold">{r.title}</div>
@@ -92,9 +92,9 @@ function CareersPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: i * 0.03 }}
-              className="glass p-6"
+              className="glass p-6 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary hover:border-0 transition hover:-translate-y-0.5"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-accent">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent/50 text-primary">
                 <b.icon className="h-5 w-5" />
               </div>
               <div className="mt-4 text-base font-semibold">{b.title}</div>
@@ -105,7 +105,7 @@ function CareersPage() {
       </section>
 
       <section id="apply" className="mx-auto mt-24 max-w-5xl px-4 pb-24 md:mt-32 md:pb-32">
-        <div className="glass-strong flex flex-col items-center gap-4 p-10 text-center md:p-16">
+        <div className="glass-strong flex flex-col items-center gap-4 p-10 text-center md:p-16 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary hover:border-0 transition hover:-translate-y-0.5">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Apply now</h2>
           <p className="max-w-xl text-muted-foreground">Send your CV or portfolio. Every application is reviewed by a human, usually within a week.</p>
           {/* <Link to="https://mail.google.com/mail/?view=cm&fs=1&to=prehost9@gmail.com" target="_blank" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white">
@@ -115,7 +115,7 @@ function CareersPage() {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=prehost9@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(37,99,235,0.3)] border-primary hover:border-0 transition hover:-translate-y-0.5"
           >Apply <ArrowRight className="h-4 w-4" /></a>
         </div>
       </section>

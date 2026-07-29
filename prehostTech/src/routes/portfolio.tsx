@@ -72,7 +72,7 @@ function PortfolioPage() {
           ))}
         </div>
         <div className="mt-14 text-center">
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_-12px_rgba(37,99,235,0.7)]">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-primary shadow-[0_16px_40px_-12px_rgba(37,99,235,0.7)] transition hover:-translate-y-0.5">
             Request full case studies <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

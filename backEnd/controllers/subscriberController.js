@@ -30,25 +30,40 @@ exports.Subscribe = async (req, res) => {
     const subject = "Welcome to Prehost Technology";
 
     const html = `
-      <div style="font-family: Arial, sans-serif; padding:20px;">
-        <h2>🎉 Thank You for Subscribing!</h2>
+       <div
+          style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #333; line-height: 1.6;">
 
-        <p>Hello,</p>
+          <h2 style="color: #2563eb; margin-bottom: 16px;">
+               🎉 Welcome to Prehost Technology!
+          </h2>
 
-        <p>
-          Thank you for subscribing to <strong>Prehost Technology</strong>.
-        </p>
+          <p>Hello,</p>
 
-        <p>
-          You'll now receive updates about our latest products,
-          services, and offers.
-        </p>
+          <p>
+               Thank you for subscribing to <strong>Prehost Technology</strong>.
+               We're excited to have you as part of our community.
+          </p>
 
-        <p>
-          Regards,<br>
-          <strong>Prehost Technology Team</strong>
-        </p>
-      </div>
+          <p>
+               You'll be among the first to receive updates about our latest
+               technologies, products, services, industry insights, and exclusive offers.
+          </p>
+
+          <p>
+               We look forward to helping you stay informed and connected with everything happening at Prehost
+               Technology.
+          </p>
+
+          <p>
+               Thank you for your support!
+          </p>
+
+          <p style="margin-top: 24px;">
+               Best regards,<br>
+               <strong>Prehost Technology Team</strong>
+          </p>
+
+     </div>
     `;
 
     // Send Email

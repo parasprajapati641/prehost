@@ -22,7 +22,7 @@ export function SectionHeader({
     >
       {eyebrow && (
         <div className={`${center ? "mx-auto" : ""} inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground`}>
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
           {eyebrow}
         </div>
       )}
@@ -53,7 +53,7 @@ export function PageHero({
       <div className="pointer-events-none absolute inset-0 grid-pattern opacity-30 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="relative mx-auto max-w-5xl px-4 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent animate-pulse-glow" />
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" />
           {eyebrow}
         </div>
         <h1 className="mt-5 text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">

@@ -51,9 +51,9 @@ function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="glass p-6"
+              className="glass p-6 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] hover:border-0 transition hover:-translate-y-0.5"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-accent">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-primary">
                 <v.icon className="h-5 w-5" />
               </div>
               <div className="mt-4 text-base font-semibold">{v.title}</div>
@@ -76,7 +76,7 @@ function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.03 }}
-              className="glass flex gap-6 p-6"
+              className="glass flex gap-6 p-6 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] hover:border-0 transition hover:-translate-y-0.5"
             >
               <div className="w-20 shrink-0 text-lg font-bold text-gradient">{t.year}</div>
               <div className="min-w-0">
@@ -92,7 +92,7 @@ function AboutPage() {
         <div className="glass-strong flex flex-col items-center gap-4 p-10 text-center md:p-16">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Want to build with us?</h2>
           <p className="max-w-xl text-muted-foreground">Book a free consultation with our engineering leads and we'll return a scoped plan within 48 hours.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white">
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary hover:border-0 transition hover:-translate-y-0.5">
             Book consultation <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
