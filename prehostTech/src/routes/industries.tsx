@@ -9,7 +9,7 @@ import { PageHero } from "@/components/site/Section";
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries — Prehost Technology" },
+      // { title: "Industries — Prehost Technology" },
       { name: "description", content: "Vertical expertise across 18 industries — healthcare, finance, retail, SaaS, government and more." },
       { property: "og:title", content: "Industries — Prehost Technology" },
       { property: "og:description", content: "Deep experience across healthcare, finance, retail, SaaS, government and more." },

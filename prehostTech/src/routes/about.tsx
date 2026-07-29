@@ -6,7 +6,7 @@ import { PageHero } from "@/components/site/Section";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Prehost Technology" },
+      // { title: "About — Prehost Technology" },
       { name: "description", content: "Prehost Technology is a global software, AI and design partner founded in 2019, shipping premium products across four continents." },
       { property: "og:title", content: "About — Prehost Technology" },
       { property: "og:description", content: "Global software, AI and design partner founded in 2019." },

@@ -6,7 +6,7 @@ import { PageHero } from "@/components/site/Section";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Prehost Technology" },
+      // { title: "Services — Prehost Technology" },
       { name: "description", content: "Software, AI, cloud, design and growth services — end-to-end product delivery from a single senior team." },
       { property: "og:title", content: "Services — Prehost Technology" },
       { property: "og:description", content: "End-to-end product delivery: software, AI, cloud, design, growth and dedicated teams." },
@@ -45,7 +45,7 @@ function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.03 }}
-              className="glass p-8 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary hover:border-0 transition hover:-translate-y-0.5"
+              className="glass p-8 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] hover:border-0 transition hover:-translate-y-0.5"
             >
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-brand)] text-primary shadow-[0_10px_30px_-8px_rgba(37,99,235,0.7)]">
                 <s.icon className="h-5 w-5" />

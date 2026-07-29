@@ -6,7 +6,7 @@ import { PageHero } from "@/components/site/Section";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Prehost Technology" },
+      // { title: "Careers — Prehost Technology" },
       { name: "description", content: "Join Prehost Technology. Remote-first, senior-heavy teams shipping premium software, AI and cloud products worldwide." },
       { property: "og:title", content: "Careers — Prehost Technology" },
       { property: "og:description", content: "Remote-first roles across engineering, AI, design and growth." },
@@ -63,7 +63,7 @@ function CareersPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.02 }}
-              className="glass group flex items-center justify-between gap-4 p-5 transition hover:-translate-y-0.5 hover:border-0 border-primary"
+              className="glass group flex items-center justify-between gap-4 p-5 transition hover:-translate-y-0.5 hover:border-0"
             >
               <div className="min-w-0">
                 <div className="text-base font-semibold">{r.title}</div>
@@ -92,7 +92,7 @@ function CareersPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: i * 0.03 }}
-              className="glass p-6 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary hover:border-0 transition hover:-translate-y-0.5"
+              className="glass p-6 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] hover:border-0 transition hover:-translate-y-0.5"
             >
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent/50 text-primary">
                 <b.icon className="h-5 w-5" />
@@ -105,7 +105,7 @@ function CareersPage() {
       </section>
 
       <section id="apply" className="mx-auto mt-24 max-w-5xl px-4 pb-24 md:mt-32 md:pb-32">
-        <div className="glass-strong flex flex-col items-center gap-4 p-10 text-center md:p-16 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary hover:border-0 transition hover:-translate-y-0.5">
+        <div className="glass-strong flex flex-col items-center gap-4 p-10 text-center md:p-16 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] hover:border-0 transition hover:-translate-y-0.5">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Apply now</h2>
           <p className="max-w-xl text-muted-foreground">Send your CV or portfolio. Every application is reviewed by a human, usually within a week.</p>
           {/* <Link to="https://mail.google.com/mail/?view=cm&fs=1&to=prehost9@gmail.com" target="_blank" className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-sm font-semibold text-white">

@@ -6,7 +6,7 @@ import { PageHero } from "@/components/site/Section";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Prehost Technology" },
+      // { title: "Portfolio — Prehost Technology" },
       { name: "description", content: "A cross-section of software, AI and platform work Prehost Technology has shipped across healthcare, finance, retail and SaaS." },
       { property: "og:title", content: "Portfolio — Prehost Technology" },
       { property: "og:description", content: "Real projects, measured outcomes — healthcare, finance, e-commerce, SaaS and more." },

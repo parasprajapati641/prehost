@@ -72,7 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#050816" },
-      { title: "Prehost Technology — Transforming Ideas into Powerful Digital Solutions" },
+      { title: "Prehost Technology" },
       { name: "description", content: "Prehost Technology builds world-class software, AI, cloud, and digital products for ambitious startups, SMEs and enterprises worldwide." },
       { name: "author", content: "Prehost Technology" },
       { property: "og:site_name", content: "Prehost Technology" },
@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/PREHOST.svg",  type: "image/svg+xml" },
+      { rel: "icon", href: "/PREHOST.png", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" },
@@ -126,6 +126,9 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useEffect(() => {
+    document.title = "Prehost Technology";
+  }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen">

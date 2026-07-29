@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { z } from "zod";
-import { Mail, Phone, MapPin, Clock, Send, Twitter, Linkedin, Github, Check , Instagram} from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, Twitter, Linkedin, Github, Check, Instagram } from "lucide-react";
 import { PageHero } from "@/components/site/Section";
 
 import api from "@/api/axios";
@@ -11,7 +11,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Prehost Technology" },
+      // { title: "Contact — Prehost Technology" },
       { name: "description", content: "Talk to Prehost Technology. Book a free consultation and receive a scoped project plan within 48 hours." },
       { property: "og:title", content: "Contact — Prehost Technology" },
       { property: "og:description", content: "Book a free consultation. Scoped plan within 48 hours." },
@@ -79,11 +79,11 @@ function ContactPage() {
         description="Tell us about your project. You'll get a scoped plan and a first-call slot within 48 hours."
       />
 
-      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-10">
+      <section className="mx-auto max-w-7xl px-4 pb-10 md:pb-10 pt-10">
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <motion.div
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className="glass-strong p-8 md:p-10 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)] border-primary"
+            className="glass p-8 md:p-6 shadow-[0_10px_30px_-8px_rgba(37,99,235,0.2)]"
           >
             {sent ? (
               <div className="flex flex-col items-center gap-4 py-16 text-center">
@@ -134,7 +134,7 @@ function ContactPage() {
             )}
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-6.5">
             <InfoCard icon={Mail} label="Email" value="prehost9@gmail.com" />
             <InfoCard icon={Phone} label="Phone" value="+91 79904 86335" />
             <InfoCard icon={MapPin} label="Head office" value="Time Trade Centre, 275, Vesu Canal Rd, opposite polaris, Magob, puna, Surat, Gujarat 395010" />
@@ -188,9 +188,13 @@ function ContactPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="glass overflow-hidden">
-              {/* <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-primary/40 to-accent/30">
+      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-0">
+          <div className="glass overflow-hidden">
+            {/* <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-primary/40 to-accent/30">
                 <div className="absolute inset-0 grid-pattern opacity-40 mix-blend-overlay" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="glass-strong flex items-center gap-2 px-4 py-2 text-sm font-semibold">
@@ -198,19 +202,17 @@ function ContactPage() {
                   </div>
                 </div>
               </div> */}
-              <iframe
-                title="Prehost Office Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.8773632712673!2d72.8724829088464!3d21.197030180413343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3c200733af%3A0x1381040cfe6c2e42!2sPrehost%20Technology!5e0!3m2!1sen!2sin!4v1784922856509!5m2!1sen!2sin"
-                className="w-full aspect-[4/3]"
-                style={{ border: 0 }}
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+            <iframe
+              title="Prehost Office Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.8773632712673!2d72.8724829088464!3d21.197030180413343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3c200733af%3A0x1381040cfe6c2e42!2sPrehost%20Technology!5e0!3m2!1sen!2sin!4v1784922856509!5m2!1sen!2sin"
+              className="w-full aspect-[4/3] h-100"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
-        </div>
-      </section>
+        </section>
     </>
   );
 }

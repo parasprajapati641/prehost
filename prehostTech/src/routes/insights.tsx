@@ -7,7 +7,7 @@ import { useState } from "react"
 export const Route = createFileRoute("/insights")({
   head: () => ({
     meta: [
-      { title: "Insights — Prehost Technology" },
+      // { title: "Insights Prehost Technology" },
       { name: "description", content: "Essays and playbooks on AI, engineering, product design, cloud infrastructure and digital growth from the Prehost Technology team." },
       { property: "og:title", content: "Insights — Prehost Technology" },
       { property: "og:description", content: "AI, engineering, design and growth playbooks from the Prehost team." },

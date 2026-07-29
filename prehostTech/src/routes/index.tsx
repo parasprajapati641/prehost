@@ -11,7 +11,7 @@ import { SectionHeader } from "@/components/site/Section";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Prehost Technology — Build the Future with Premium Software & AI" },
+      // { title: "Prehost Technology — Build the Future with Premium Software & AI" },
       { name: "description", content: "Prehost Technology designs, develops and scales world-class digital products, AI solutions, cloud platforms and mobile apps for ambitious businesses worldwide." },
       { property: "og:title", content: "Prehost Technology — Build the Future" },
       { property: "og:description", content: "Software, AI, cloud, design and growth partners to startups, SMEs and enterprises worldwide." },
@@ -34,7 +34,7 @@ const STATS = [
 const SERVICES = [
   { icon: Code2, title: "Software Engineering", desc: "Web, mobile and enterprise apps engineered for scale and clarity.", items: ["Web Applications", "Mobile Apps", "Custom Software", "Enterprise Solutions"] },
   { icon: Cpu, title: "AI & Machine Learning", desc: "From LLM copilots to intelligent automation and predictive systems.", items: ["AI Development", "ML Solutions", "Automation", "LangChain / RAG"] },
-  { icon: Cloud, title: "Cloud & DevOps", desc: "Production-grade infra on AWS, GCP and Azure — resilient by design.", items: ["Cloud Architecture", "API Development", "Backend Engineering", "DevOps & SRE"] },
+  { icon: Cloud, title: "Cloud & DevOps", desc: "Production grade infra on AWS, GCP and Azure resilient by design.", items: ["Cloud Architecture", "API Development", "Backend Engineering", "DevOps & SRE"] },
   { icon: Palette, title: "Design & Brand", desc: "Product design that users love and brand systems that scale.", items: ["UI/UX Design", "Brand Identity", "Motion Graphics", "Video Editing"] },
   { icon: Megaphone, title: "Digital Growth", desc: "SEO, performance and social growth engines that compound.", items: ["SEO", "Performance Marketing", "Social Media", "Content Strategy"] },
   { icon: ShoppingCart, title: "Commerce & Platforms", desc: "Marketplaces and storefronts on Shopify, WordPress and Magento.", items: ["E-commerce", "Shopify", "WordPress", "Magento"] },
@@ -114,7 +114,7 @@ const TIMELINE = [
   { year: "2019", title: "Founded", desc: "Three engineers, one office, a promise: no vaporware." },
   { year: "2021", title: "First 50 Clients", desc: "Expanded across Europe and the Middle East." },
   { year: "2023", title: "AI Practice", desc: "Launched our AI & ML division with a Fortune 500 partner." },
-  { year: "2025", title: "10 Countries", desc: "Remote-first teams shipping across four continents." },
+  { year: "2025", title: "30+ Countries", desc: "Remote-first teams shipping across four continents." },
   { year: "2026+", title: "The Future", desc: "Agentic products, private AI infra, deeper vertical SaaS." },
 ];
 
@@ -214,7 +214,7 @@ function Hero() {
           initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl"
         >
-          We design, develop and scale world-class digital products, AI systems, cloud platforms and mobile apps for ambitious businesses worldwide.
+          We design, develop and scale world class digital products, AI systems, cloud platforms and mobile apps for ambitious businesses worldwide.
         </motion.p>
 
         <motion.div
@@ -280,7 +280,7 @@ function Services() {
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="What we do"
-          title={<>End-to-end digital <span className="text-gradient">product delivery</span></>}
+          title={<>End to end digital <span className="text-gradient">product delivery</span></>}
           description="Eight practices, one integrated team. Choose a service or compose them into a squad tailored to your roadmap."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -291,7 +291,7 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="group glass relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-white/20 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.3)] border-primary"
+              className="group glass relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-white/20 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.3)]"
             >
               {/* <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40  rounded-full bg-primary/55 opacity-0 blur-3xl transition group-hover:opacity-100" /> */}
               <>
@@ -336,7 +336,7 @@ function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: (i % 6) * 0.03 }}
-              className="group glass flex flex-col items-center justify-center gap-2 p-5 text-center transition hover:-translate-y-0.5 border-primary/40 hover:border-0 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
+              className="group glass flex flex-col items-center justify-center gap-2 p-5 text-center transition hover:-translate-y-0.5 hover:border-0 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
             >
               <div className="grid h-10 w-10 place-items-center rounded-lg bg-white/5 text-primary transition group-hover:bg-primary/15 group-hover:text-primary">
                 <ind.icon className="h-5 w-5" />
@@ -367,7 +367,7 @@ function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="group glass flex gap-4 p-6 hover:border-white transition hover:-translate-y-0.5 border-primary shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
+              className="group glass flex gap-4 p-6 hover:border-white transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
             >
               <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-primary">
                 <w.icon className="h-5 w-5" />
@@ -479,7 +479,7 @@ function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.03 }}
-              className="glass relative overflow-hidden p-6 border-secondary transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)] hover:border-0"
+              className="glass relative overflow-hidden p-6 transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)] hover:border-0"
             >
               <div className="text-4xl font-bold tracking-tight text-primary">{p.step}</div>
               <div className="mt-3 text-base font-semibold">{p.title}</div>
@@ -508,7 +508,7 @@ function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="glass p-8 border-primary"
+              className="glass p-8"
             >
               <div className="flex gap-1 text-primary">
                 {Array.from({ length: 5 }).map((_, j) => <Star key={j} className="h-4 w-4 fill-current" />)}

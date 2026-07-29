@@ -9,7 +9,7 @@ import api from "@/api/axios";
 export const Route = createFileRoute("/login")({
      head: () => ({
           meta: [
-               { title: "Login — Prehost Technology" },
+               // { title: "Login — Prehost Technology" },
                {
                     name: "description",
                     content: "Login to your Prehost Technology account.",
@@ -94,7 +94,7 @@ function LoginPage() {
                          initial={{ opacity: 0, y: 20 }}
                          animate={{ opacity: 1, y: 0 }}
                          transition={{ duration: 0.4 }}
-                         className="mx-auto max-w-md glass-strong p-8"
+                         className="mx-auto max-w-md glass p-8"
                     >
                          <form onSubmit={onSubmit} noValidate className="space-y-5">
 
@@ -106,13 +106,13 @@ function LoginPage() {
                                    </label>
 
                                    <div className="relative">
-                                        <Mail className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                                        <Mail className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-primary" />
 
                                         <input
                                              type="email"
                                              name="email"
                                              placeholder="john@example.com"
-                                             className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary/60"
+                                             className="w-full rounded-2xl border border-primary/50 bg-white/5 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary"
                                              onChange={() => clearError("email")}
                                         />
                                    </div>
@@ -132,13 +132,13 @@ function LoginPage() {
                                    </label>
 
                                    <div className="relative">
-                                        <Lock className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                                        <Lock className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-primary" />
 
                                         <input
                                              type={showPassword ? "text" : "password"}
                                              name="password"
                                              placeholder="********"
-                                             className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-11 pr-11 text-sm outline-none transition focus:border-primary/60"
+                                             className="w-full rounded-2xl border border-primary bg-white/5 py-3 pl-11 pr-11 text-sm outline-none transition focus:border-primary"
                                              onChange={() => clearError("password")}
                                         />
 
@@ -148,9 +148,9 @@ function LoginPage() {
                                              className="absolute right-4 top-1/2 -translate-y-1/2"
                                         >
                                              {showPassword ? (
-                                                  <EyeOff className="h-4 w-4 text-muted-foreground" />
+                                                  <EyeOff className="h-4 w-4 text-primary" />
                                              ) : (
-                                                  <Eye className="h-4 w-4 text-muted-foreground" />
+                                                  <Eye className="h-4 w-4 text-primary" />
                                              )}
                                         </button>
                                    </div>
@@ -184,7 +184,7 @@ function LoginPage() {
 
                               <button
                                    disabled={loading}
-                                   className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5"
+                                   className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 font-semibold text-primary transition hover:-translate-y-0.5"
                               >
                                    <LogIn className="h-4 w-4" />
 
