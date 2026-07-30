@@ -52,9 +52,9 @@ exports.register = async (req, res) => {
                message: "User registered successfully",
                token,
                user: {
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email
+                    firstName: newUser.firstName,
+                    lastName: newUser.lastName,
+                    email: newUser.email
                }
           });
      }
