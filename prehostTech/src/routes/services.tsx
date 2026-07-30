@@ -19,13 +19,13 @@ export const Route = createFileRoute("/services")({
 
 const SERVICES = [
   { icon: Code2, title: "Software Engineering", desc: "Web, mobile and enterprise applications engineered for scale, clarity and long-term ownership.", items: ["Website Development", "Web Applications", "Mobile Apps (iOS/Android)", "Custom Software", "Enterprise Solutions"] },
-  { icon: Cpu, title: "AI & Machine Learning", desc: "From LLM copilots to computer vision and predictive systems — production-ready AI.", items: ["LLM & RAG Systems", "AI Development", "Machine Learning", "Intelligent Automation", "Python AI"] },
+  { icon: Cpu, title: "AI & Machine Learning", desc: "From LLM copilots to computer vision and predictive systems production-ready AI.", items: ["LLM & RAG Systems", "AI Development", "Machine Learning", "Intelligent Automation", "Python AI"] },
   { icon: Cloud, title: "Cloud & Platform Engineering", desc: "Reliable, observable, cost-aware infra on AWS, GCP, Azure and Cloudflare.", items: ["Cloud Architecture", "API Development", "Backend Engineering", "Frontend Engineering", "DevOps & SRE"] },
   { icon: Palette, title: "Design & Brand", desc: "Product design that users love and brand systems that scale across every touchpoint.", items: ["UI/UX Design", "Brand Identity", "Graphic Design", "Motion Graphics", "Video Editing"] },
-  { icon: Megaphone, title: "Digital Growth", desc: "Compounding growth engines: SEO, paid, social and content — with clear attribution.", items: ["SEO", "Performance Marketing", "Social Media", "Content Strategy"] },
+  { icon: Megaphone, title: "Digital Growth", desc: "Compounding growth engines: SEO, paid, social and content with clear attribution.", items: ["SEO", "Performance Marketing", "Social Media", "Content Strategy"] },
   { icon: ShoppingCart, title: "Commerce & Marketplaces", desc: "Headless commerce, marketplaces and storefronts on the platforms you already use.", items: ["E-commerce Development", "Shopify", "WordPress", "Magento", "Marketplace Solutions"] },
-  { icon: LifeBuoy, title: "Maintenance & Support", desc: "SLA-backed support, monitoring and continuous improvement after launch.", items: ["24/7 Support", "Monitoring & Observability", "Performance Tuning", "Security Audits", "IT Consulting"] },
-  { icon: Users, title: "Dedicated Development Teams", desc: "Vetted engineers embedded in your workflow — remote-first, timezone-friendly.", items: ["Staff Augmentation", "Product Squads", "CTO-as-a-Service", "Fractional Engineering Leadership"] },
+  { icon: LifeBuoy, title: "Maintenance & Support", desc: "SLA backed support, monitoring and continuous improvement after launch.", items: ["24/7 Support", "Monitoring & Observability", "Performance Tuning", "Security Audits", "IT Consulting"] },
+  { icon: Users, title: "Dedicated Development Teams", desc: "Vetted engineers embedded in your workflow remote-first, timezone-friendly.", items: ["Staff Augmentation", "Product Squads", "CTO as a Service", "Fractional Engineering Leadership"] },
 ];
 
 function ServicesPage() {

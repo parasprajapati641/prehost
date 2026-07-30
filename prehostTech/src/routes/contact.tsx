@@ -76,7 +76,7 @@ function ContactPage() {
       <PageHero
         eyebrow="Let's talk"
         title={<>Book a <span className="text-gradient">free consultation</span></>}
-        description="Tell us about your project. You'll get a scoped plan and a first-call slot within 48 hours."
+        description="Tell us about your project. You'll get a scoped plan and a first call slot within 48 hours."
       />
 
       <section className="mx-auto max-w-7xl px-4 pb-10 md:pb-10 pt-10">
@@ -153,7 +153,7 @@ function ContactPage() {
 
             <div className="glass p-5">
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                Follow us
+                Follow us 
               </div>
 
               <div className="flex gap-2">
@@ -192,7 +192,7 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-0">
+      <section className="mx-auto max-w-7xl px-4 pb-10 md:pb-15 pt-0">
           <div className="glass overflow-hidden">
             {/* <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-primary/40 to-accent/30">
                 <div className="absolute inset-0 grid-pattern opacity-40 mix-blend-overlay" />

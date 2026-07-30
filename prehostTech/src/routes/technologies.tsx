@@ -16,21 +16,171 @@ export const Route = createFileRoute("/technologies")({
   component: TechnologiesPage,
 });
 
-const TECH = [
-  { cat: "Frontend", items: ["React", "Next.js", "Angular", "Vue", "HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS"] },
-  { cat: "Backend", items: ["Node.js", "Python", "Django", "FastAPI", "Express", "NestJS", "PHP", "Laravel", "Java", "Spring Boot", ".NET"] },
-  { cat: "Databases", items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Redis"] },
-  { cat: "Cloud & DevOps", items: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Vercel", "Cloudflare"] },
-  { cat: "AI & Machine Learning", items: ["OpenAI", "Gemini", "Claude", "LangChain", "Python AI", "Machine Learning", "PyTorch", "TensorFlow"] },
-];
+// const TECH = [
+//   { cat: "Frontend", items: ["React", "Next.js", "Angular", "Vue", "HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS"] },
+//   { cat: "Backend", items: ["Node.js", "Python", "Django", "FastAPI", "Express", "NestJS", "PHP", "Laravel", "Java", "Spring Boot", ".NET"] },
+//   { cat: "Databases", items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Redis"] },
+//   { cat: "Cloud & DevOps", items: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Vercel", "Cloudflare"] },
+//   { cat: "AI & Machine Learning", items: ["OpenAI", "Gemini", "Claude", "LangChain", "Python AI", "Machine Learning", "PyTorch", "TensorFlow"] },
+// ];
 
+
+const TECH = [
+  {
+    cat: "Frontend",
+    items: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Angular",
+      "Vue",
+      "Nuxt.js",
+      "Svelte",
+      "Remix",
+      "Astro",
+      "HTML",
+      "CSS",
+      "Sass",
+      "JavaScript",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Material UI",
+      "Shadcn UI",
+      "Redux",
+      "Zustand",
+      "React Query",
+      "TanStack Router",
+      "Framer Motion",
+      "Ant Design"
+    ]
+  },
+  {
+    cat: "Backend",
+    items: [
+      "Node.js",
+      "Express",
+      "NestJS",
+      "Fastify",
+      "Python",
+      "Django",
+      "FastAPI",
+      "Flask",
+      "PHP",
+      "Laravel",
+      "CodeIgniter",
+      "Java",
+      "Spring Boot",
+      "C#",
+      ".NET",
+      "Go",
+      "Gin",
+      "Rust",
+      "Ruby on Rails"
+    ]
+  },
+  {
+    cat: "Databases",
+    items: [
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "MariaDB",
+      "SQLite",
+      "Firebase",
+      "Supabase",
+      "Redis",
+      "Elasticsearch",
+      "Oracle Database"
+    ]
+  },
+  {
+    cat: "Cloud & DevOps",
+    items: [
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "DigitalOcean",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "GitHub Actions",
+      "GitLab CI/CD",
+      "Jenkins",
+      "NGINX",
+      "Cloudflare",
+      "Vercel",
+      "Netlify",
+      "Render"
+    ]
+  },
+  {
+    cat: "Mobile",
+    items: [
+      "React Native",
+      "Flutter",
+      "Swift",
+      "Kotlin",
+      "Ionic",
+      "Expo"
+    ]
+  },
+  {
+    cat: "AI & Machine Learning",
+    items: [
+      "OpenAI",
+      "Gemini",
+      "Claude",
+      "LangChain",
+      "LlamaIndex",
+      "Hugging Face",
+      "Python AI",
+      "Machine Learning",
+      "Deep Learning",
+      "PyTorch",
+      "TensorFlow",
+      "Scikit-learn",
+      "OpenCV",
+      "RAG",
+      "Vector Databases"
+    ]
+  },
+  {
+    cat: "CMS & E-commerce",
+    items: [
+      "WordPress",
+      "Strapi",
+      "Sanity",
+      "Contentful",
+      "Shopify",
+      "WooCommerce",
+      "Magento"
+    ]
+  },
+  {
+    cat: "Tools",
+    items: [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Bitbucket",
+      "Postman",
+      "Figma",
+      "VS Code",
+      "Jira",
+      "Slack",
+      "npm",
+      "Yarn",
+      "pnpm"
+    ]
+  }
+];
 function TechnologiesPage() {
   return (
     <>
       <PageHero
         eyebrow="Our stack"
         title={<>The <span className="text-gradient">modern engineering stack</span>, mastered</>}
-        description="We use battle-tested tools by default and evaluate new ones carefully. Every choice has a reason your team can inspect."
+        description="We use battle tested tools by default and evaluate new ones carefully. Every choice has a reason your team can inspect."
       />
       <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">
         <div className="space-y-8">
@@ -49,7 +199,7 @@ function TechnologiesPage() {
               </div>
               <div className="mt-6 flex flex-wrap gap-2">
                 {group.items.map((t) => (
-                  <span key={t} className="rounded-full border border-primary/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-foreground/90 transition hover:border-primary/40 hover:bg-primary/10">
+                  <span key={t} className="rounded-full border border-primary/10 bg-primary/5 px-4 py-1.5 text-sm font-medium text-foreground/90 transition hover:border-primary/40 hover:bg-primary/10">
                     {t}
                   </span>
                 ))}

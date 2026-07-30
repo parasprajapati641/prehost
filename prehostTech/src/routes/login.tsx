@@ -89,7 +89,7 @@ function LoginPage() {
                     description="Sign in to continue using your account."
                />
 
-               <section className="mx-auto max-w-7xl px-4 pb-24 pt-20">
+               <section className="mx-auto max-w-7xl px-4 md:pb-14 md:pt-10">
                     <motion.div
                          initial={{ opacity: 0, y: 20 }}
                          animate={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ function LoginPage() {
 
                               <button
                                    disabled={loading}
-                                   className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 font-semibold text-primary transition hover:-translate-y-0.5"
+                                   className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 font-semibold text-primary shadow-[0_16px_40px_-12px_rgba(37,99,235,0.7)] transition hover:-translate-y-0.5"
                               >
                                    <LogIn className="h-4 w-4" />
 

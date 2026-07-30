@@ -147,7 +147,7 @@ function SignupPage() {
                     description="Join Prehost Technology and start building with us."
                />
 
-               <section className="mx-auto max-w-7xl px-4 pb-24 pt-20">
+               <section className="mx-auto max-w-7xl px-4 md:pb-14 md:pt-10">
                     <motion.div
                          initial={{ opacity: 0, y: 25 }}
                          animate={{ opacity: 1, y: 0 }}
@@ -258,7 +258,7 @@ function SignupPage() {
 
                                    <div className="flex gap-6">
 
-                                        <label className="flex items-center gap-2">
+                                        <label className="flex items-center gap-2" >
                                              <input type="radio" name="gender" value="Male" onChange={() => clearError("gender")} />
                                              Male
                                         </label>
@@ -380,7 +380,7 @@ function SignupPage() {
 
                               <button
                                    disabled={loading}
-                                   className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 font-semibold text-primary transition hover:-translate-y-0.5"
+                                   className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--gradient-brand)] px-6 py-3 font-semibold text-primary shadow-[0_16px_40px_-12px_rgba(37,99,235,0.7)] transition hover:-translate-y-0.5"
                               >
                                    <UserPlus className="h-4 w-4" />
                                    {loading ? "Creating Account..." : "Create Account"}

@@ -26,9 +26,9 @@ export const Route = createFileRoute("/")({
 
 const STATS = [
   { value: "100+", label: "Projects Delivered" },
-  { value: "50+", label: "Happy Clients" },
-  { value: "10+", label: "Countries Served" },
-  { value: "99%", label: "Client Satisfaction" },
+  { value: "150+", label: "Happy Clients" },
+  { value: "30+", label: "Countries Served" },
+  { value: "100%", label: "Client Satisfaction" },
 ];
 
 const SERVICES = [
@@ -39,7 +39,7 @@ const SERVICES = [
   { icon: Megaphone, title: "Digital Growth", desc: "SEO, performance and social growth engines that compound.", items: ["SEO", "Performance Marketing", "Social Media", "Content Strategy"] },
   { icon: ShoppingCart, title: "Commerce & Platforms", desc: "Marketplaces and storefronts on Shopify, WordPress and Magento.", items: ["E-commerce", "Shopify", "WordPress", "Magento"] },
   { icon: LifeBuoy, title: "Maintenance & Support", desc: "SLA-backed support, monitoring and continuous improvement.", items: ["24/7 Support", "Monitoring", "Performance Tuning", "Security Audits"] },
-  { icon: Users, title: "Dedicated Teams", desc: "Vetted engineers embedded in your workflow — remote-first.", items: ["Staff Augmentation", "Product Squads", "IT Consulting", "CTO-as-a-Service"] },
+  { icon: Users, title: "Dedicated Teams", desc: "Vetted engineers embedded in your workflow — remote-first.", items: ["Staff Augmentation", "Product Squads", "IT Consulting", "CTO as a Service"] },
 ];
 
 const INDUSTRIES = [
@@ -64,21 +64,41 @@ const INDUSTRIES = [
 ];
 
 const WHY = [
-  { icon: Users, title: "Experienced Engineers", desc: "Senior-heavy teams with product intuition, not just code output." },
-  { icon: Zap, title: "Modern Technologies", desc: "React, Next.js, Node, Python, Go, Rust — the right tool per job." },
-  { icon: Rocket, title: "Agile Delivery", desc: "Two-week iterations with demoable value at every checkpoint." },
-  { icon: Shield, title: "Enterprise Security", desc: "SOC 2-ready practices, encryption at rest and in transit." },
-  { icon: Wrench, title: "Scalable Architecture", desc: "Designed for 10x — event-driven, observable, cost-aware." },
+  { icon: Users, title: "Experienced Engineers", desc: "Senior heavy teams with product intuition, not just code output." },
+  { icon: Zap, title: "Modern Technologies", desc: "React, Next.js, Node, Python, Go, Rust the right tool per job." },
+  { icon: Rocket, title: "Agile Delivery", desc: "Two week iterations with demoable value at every checkpoint." },
+  { icon: Shield, title: "Enterprise Security", desc: "SOC 2 ready practices, encryption at rest and in transit." },
+  { icon: Wrench, title: "Scalable Architecture", desc: "Designed for 10x event driven, observable, cost-aware." },
   { icon: Sparkles, title: "Transparent Communication", desc: "Shared boards, weekly reviews, live dashboards. No surprises." },
 ];
 
-const TECH = {
-  Frontend: ["React", "Next.js", "Vue", "Angular", "TypeScript", "Tailwind CSS"],
-  Backend: ["Node.js", "Python", "Django", "FastAPI", "NestJS", "Laravel", "Spring Boot", ".NET"],
-  Databases: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase"],
-  Cloud: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Vercel", "Cloudflare"],
-  AI: ["OpenAI", "Gemini", "Claude", "LangChain", "PyTorch", "TensorFlow"],
-};
+// const TECH = {
+//   Frontend: ["React", "Next.js","Angular", "Vue", "Nuxt.js", "Svelte", "Remix", "Astro", "HTML", "CSS", "Sass", "JavaScript", "TypeScript", "Tailwind CSS", "Bootstrap", "Material UI", "Shadcn UI", "Redux", "Zustand", "React Query", "TanStack Router", "Framer Motion", "Ant Design"],
+//   Backend: [ "Node.js", "Express", "NestJS", "Fastify", "Python", "Django", "FastAPI", "Flask", "PHP", "Laravel", "CodeIgniter", "Java", "Spring Boot", "C#", ".NET", "Go", "Gin", "Rust", "Ruby on Rails"],
+//   Databases: ["MongoDB", "PostgreSQL", "MySQL", "MariaDB", "SQLite", "Firebase", "Supabase", "Redis", "Elasticsearch", "Oracle Database"],
+//   Cloud: ["AWS",
+//       "Azure",
+//       "Google Cloud",
+//       "DigitalOcean",
+//       "Docker",
+//       "Kubernetes",
+//       "Terraform",
+//       "GitHub Actions",
+//       "GitLab CI/CD",
+//       "Jenkins",
+//       "NGINX",
+//       "Cloudflare",
+//       "Vercel", "Netlify", "Render"],
+//   AI: ["OpenAI",
+//       "Gemini",
+//       "Claude",
+//       "LangChain",
+//       "LlamaIndex",
+//       "Hugging Face",
+//       "Python AI",
+//       "Machine Learning",
+//       "Deep Learning", "PyTorch", "TensorFlow", "Scikit-learn", "OpenCV", "RAG", "Vector Databases"],
+// };
 
 const PROJECTS = [
   { title: "Meridian Health", tag: "Healthcare Platform", desc: "Telemedicine + EHR for 40k clinicians across 3 continents.", palette: "from-blue-500/60 to-cyan-400/40" },
@@ -87,24 +107,24 @@ const PROJECTS = [
   { title: "OrbitERP", tag: "Enterprise ERP", desc: "Manufacturing ERP unifying 12 factories into one system.", palette: "from-orange-500/60 to-rose-400/40" },
   { title: "Kart Commerce", tag: "E-commerce", desc: "Headless commerce doing $60M+ GMV, 200ms p95 checkout.", palette: "from-cyan-500/60 to-blue-400/40" },
   { title: "Atlas LMS", tag: "Learning Platform", desc: "Adaptive learning for 1M+ students with AI tutors.", palette: "from-violet-500/60 to-blue-400/40" },
-  { title: "TableOne", tag: "Restaurant Platform", desc: "POS + reservations SaaS for 3k independent restaurants.", palette: "from-rose-500/60 to-orange-400/40" },
-  { title: "Estate Nexus", tag: "Real Estate Portal", desc: "Marketplace with 3D tours, valuations and mortgage flow.", palette: "from-sky-500/60 to-indigo-400/40" },
-  { title: "Ledger Finance", tag: "Finance Dashboard", desc: "Realtime treasury dashboard for multi-currency ops.", palette: "from-teal-500/60 to-green-400/40" },
+  // { title: "TableOne", tag: "Restaurant Platform", desc: "POS + reservations SaaS for 3k independent restaurants.", palette: "from-rose-500/60 to-orange-400/40" },
+  // { title: "Estate Nexus", tag: "Real Estate Portal", desc: "Marketplace with 3D tours, valuations and mortgage flow.", palette: "from-sky-500/60 to-indigo-400/40" },
+  // { title: "Ledger Finance", tag: "Finance Dashboard", desc: "Realtime treasury dashboard for multi-currency ops.", palette: "from-teal-500/60 to-green-400/40" },
 ];
 
 const PROCESS = [
-  { step: "01", title: "Discovery", desc: "Deep-dive workshops to map goals, users and constraints." },
+  { step: "01", title: "Discovery", desc: "Deep dive workshops to map goals, users and constraints." },
   { step: "02", title: "Research", desc: "Market, competitive and technical feasibility validation." },
   { step: "03", title: "Planning", desc: "Roadmap, architecture and success metrics locked in." },
-  { step: "04", title: "UI/UX", desc: "High-fidelity design system and interactive prototypes." },
-  { step: "05", title: "Development", desc: "Two-week sprints with continuous integration and previews." },
+  { step: "04", title: "UI/UX", desc: "High fidelity design system and interactive prototypes." },
+  { step: "05", title: "Development", desc: "Two week sprints with continuous integration and previews." },
   { step: "06", title: "Testing", desc: "Automated, manual and load testing to production standards." },
   { step: "07", title: "Deployment", desc: "Blue/green rollouts to AWS, GCP or your private cloud." },
-  { step: "08", title: "Support", desc: "SLA-backed maintenance, monitoring and iteration." },
+  { step: "08", title: "Support", desc: "SLA backed maintenance, monitoring and iteration." },
 ];
 
 const TESTIMONIALS = [
-  { name: "Sara Bennett", role: "VP Engineering, Meridian Health", quote: "Prehost delivered our telemedicine platform in 14 weeks. Their AI team quietly outperformed our in-house benchmark." },
+  { name: "Sara Bennett", role: "VP Engineering, Meridian Health", quote: "Prehost delivered our telemedicine platform in 14 weeks. Their AI team quietly outperformed our in house benchmark." },
   { name: "Daniel Okafor", role: "Founder, Kart Commerce", quote: "Every sprint shipped. Every deadline hit. Rare, honest and technically brilliant partners." },
   { name: "Priya Raman", role: "CTO, OrbitERP", quote: "They rewrote 8 years of legacy ERP without a single production outage. That should be impossible." },
   { name: "Marcus Weiss", role: "Head of Product, Nova AI", quote: "The LLM pipeline they built is the reason we raised our Series B. Full stop." },
@@ -114,17 +134,17 @@ const TIMELINE = [
   { year: "2019", title: "Founded", desc: "Three engineers, one office, a promise: no vaporware." },
   { year: "2021", title: "First 50 Clients", desc: "Expanded across Europe and the Middle East." },
   { year: "2023", title: "AI Practice", desc: "Launched our AI & ML division with a Fortune 500 partner." },
-  { year: "2025", title: "30+ Countries", desc: "Remote-first teams shipping across four continents." },
+  { year: "2025", title: "30+ Countries", desc: "Remote first teams shipping across four continents." },
   { year: "2026+", title: "The Future", desc: "Agentic products, private AI infra, deeper vertical SaaS." },
 ];
 
 const FAQ = [
   { q: "How quickly can we start?", a: "Discovery calls happen within 48 hours. Most engagements begin within 2 weeks of signing." },
   { q: "Do you work with startups or only enterprises?", a: "Both. We tailor team shape and pricing to funded startups, SMEs and Fortune 500s alike." },
-  { q: "Who owns the code and IP?", a: "You do — 100%. Everything is delivered in your repositories under your license." },
-  { q: "How do you price projects?", a: "Fixed scope, time-and-materials, or dedicated squads. We recommend the model that fits your risk profile." },
-  { q: "What about security and compliance?", a: "SOC 2-ready practices, GDPR/HIPAA experience, code scanning, secrets management and pentesting on request." },
-  { q: "Do you sign NDAs?", a: "Always — before any details are shared." },
+  { q: "Who owns the code and IP?", a: "You do 100%. Everything is delivered in your repositories under your license." },
+  { q: "How do you price projects?", a: "Fixed scope, time and materials, or dedicated squads. We recommend the model that fits your risk profile." },
+  { q: "What about security and compliance?", a: "SOC 2 ready practices, GDPR/HIPAA experience, code scanning, secrets management and pentesting on request." },
+  { q: "Do you sign NDAs?", a: "Always before any details are shared." },
 ];
 
 const CLIENTS = ["Meridian", "OrbitERP", "Nova AI", "Kart", "Atlas", "Ledger", "Vanta", "Estate Nexus", "TableOne", "Skyline"];
@@ -139,7 +159,7 @@ function HomePage() {
       <Services />
       <Industries />
       <WhyUs />
-      <Technologies />
+      {/* <Technologies /> */}
       <Portfolio />
       <Process />
       <Testimonials />
@@ -257,7 +277,7 @@ function FloatingCard({ children, delay = 0 }: { children: React.ReactNode; dela
 function Marquee() {
   const row = [...CLIENTS, ...CLIENTS];
   return (
-    <section className="relative border-y border-white/10 bg-white/[0.02] py-10">
+    <section className="relative border-y border-primary/10 bg-primar/[0.02] py-10">
       <div className="mx-auto mb-6 max-w-7xl px-4">
         <p className="text-center text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
           Trusted by teams shipping to millions
@@ -326,9 +346,9 @@ function Industries() {
         <SectionHeader
           eyebrow="Industries we serve"
           title={<>Deep expertise across <span className="text-gradient">18 industries</span></>}
-          description="From regulated healthcare and finance to fast-moving retail and SaaS — we bring vertical fluency, not template solutions."
+          description="From regulated healthcare and finance to fast moving retail and SaaS we bring vertical fluency, not template solutions."
         />
-        <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+        <div className="mt-14 grid grid-cols-2 gap-3 grid-cols-3 md:grid-cols-6">
           {INDUSTRIES.map((ind, i) => (
             <motion.div
               key={ind.name}
@@ -352,12 +372,12 @@ function Industries() {
 
 function WhyUs() {
   return (
-    <section className="relative py-10 md:py-10">
+    <section className="relative py-5 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="Why Prehost"
           title={<>Engineering partners you can <span className="text-gradient">bet the roadmap on</span></>}
-          description="Senior-heavy squads, transparent delivery and a bias for shipping — the operating model that top teams choose."
+          description="Senior heavy squads, transparent delivery and a bias for shipping the operating model that top teams choose."
         />
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3 ">
           {WHY.map((w, i) => (
@@ -384,40 +404,40 @@ function WhyUs() {
   );
 }
 
-function Technologies() {
-  return (
-    <section id="technologies" className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-4">
-        <SectionHeader
-          eyebrow="Technologies"
-          title={<>The <span className="text-gradient">modern stack</span>, mastered end to end</>}
-          description="We pick the boring, proven tools — until an exciting one earns its place."
-        />
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {Object.entries(TECH).map(([cat, list], i) => (
-            <motion.div
-              key={cat}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="glass p-6 tran hover:border-primary transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
-            >
-              <div className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">{cat}</div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {list.map((t) => (
-                  <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-foreground/90">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+// function Technologies() {
+//   return (
+//     <section id="technologies" className="relative py-5 md:py-10">
+//       <div className="mx-auto max-w-7xl px-4">
+//         <SectionHeader
+//           eyebrow="Technologies"
+//           title={<>The <span className="text-gradient">modern stack</span>, mastered end to end</>}
+//           description="We pick the boring, proven tools until an exciting one earns its place."
+//         />
+//         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+//           {Object.entries(TECH).map(([cat, list], i) => (
+//             <motion.div
+//               key={cat}
+//               initial={{ opacity: 0, y: 16 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: true, margin: "-40px" }}
+//               transition={{ duration: 0.5, delay: i * 0.04 }}
+//               className="glass p-6 tran hover:border-primary transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
+//             >
+//               <div className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">{cat}</div>
+//               <div className="mt-4 flex flex-wrap gap-2">
+//                 {list.map((t) => (
+//                   <span key={t} className="rounded-full border border-primary/50 bg-primary/5 px-3 py-1 text-xs font-medium text-foreground/90">
+//                     {t}
+//                   </span>
+//                 ))}
+//               </div>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 function Portfolio() {
   return (
@@ -426,7 +446,7 @@ function Portfolio() {
         <SectionHeader
           eyebrow="Recent work"
           title={<>Products shaping <span className="text-gradient">real industries</span></>}
-          description="A cross-section of what we've shipped in the last 24 months. Every case study is measured, real and referenceable."
+          description="A cross section of what we've shipped in the last 24 months. Every case study is measured, real and referenceable."
         />
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
@@ -453,7 +473,7 @@ function Portfolio() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold hover:bg-white/10 ">
+          <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-5 py-2.5 text-sm font-semibold hover:bg-white/10 transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)] hover:border-0">
             View all case studies <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -464,14 +484,14 @@ function Portfolio() {
 
 function Process() {
   return (
-    <section className="relative py-10 md:py-10">
+    <section className="relative py-5 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="How we work"
-          title={<>An 8-step process, <span className="text-gradient">tuned for velocity</span></>}
+          title={<>An 8 step process, <span className="text-gradient">tuned for velocity</span></>}
           description="Predictable delivery without process theater. Every step has an owner, an artifact and a definition of done."
         />
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-4 grid-cols-2 lg:grid-cols-4">
           {PROCESS.map((p, i) => (
             <motion.div
               key={p.step}
@@ -481,9 +501,9 @@ function Process() {
               transition={{ duration: 0.4, delay: i * 0.03 }}
               className="glass relative overflow-hidden p-6 transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)] hover:border-0"
             >
-              <div className="text-4xl font-bold tracking-tight text-primary">{p.step}</div>
-              <div className="mt-3 text-base font-semibold">{p.title}</div>
-              <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
+              <div className="md:text-4xl font-bold tracking-tight text-primary">{p.step}</div>
+              <div className="md:mt-3 text-sm md:text-base font-semibold">{p.title}</div>
+              <p className="md:mt-1 text-xs md:text-sm text-muted-foreground">{p.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -494,13 +514,13 @@ function Process() {
 
 function Testimonials() {
   return (
-    <section className="relative py-10 md:py-10">
+    <section className="relative py-5 md:py-10">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           eyebrow="Client stories"
           title={<>Words from the <span className="text-gradient">people we build with</span></>}
         />
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
+        <div className="mt-14 grid gap-4 md:grid-cols-2 sm:grid-cols-2">
           {TESTIMONIALS.map((t, i) => (
             <motion.figure
               key={t.name}
@@ -511,11 +531,11 @@ function Testimonials() {
               className="glass p-8"
             >
               <div className="flex gap-1 text-primary">
-                {Array.from({ length: 5 }).map((_, j) => <Star key={j} className="h-4 w-4 fill-current" />)}
+                {Array.from({ length: 5 }).map((_, j) => <Star key={j} className="md:h-4 md:w-4 h-3 w-3 fill-current" />)}
               </div>
-              <blockquote className="mt-4 text-lg leading-snug text-foreground/95">"{t.quote}"</blockquote>
+              <blockquote className="mt-4 md:text-lg leading-snug text-foreground/95">"{t.quote}"</blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-full bg-primary text-sm font-bold text-white">
+                <div className="grid md:h-10 md:w-10 h-8 w-8 place-items-center rounded-full bg-primary text-xs md:text-sm font-bold text-white">
                   {t.name.split(" ").map(n => n[0]).join("")}
                 </div>
                 <div>
@@ -533,7 +553,7 @@ function Testimonials() {
 
 function Timeline() {
   return (
-    <section className="relative py-10 md:py-10">
+    <section className="relative py-5 md:py-10">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader
           eyebrow="Our journey"
@@ -567,7 +587,7 @@ function Timeline() {
 
 function FAQSection() {
   return (
-    <section className="relative py-10 md:py-10">
+    <section className="relative py-5 md:py-10">
       <div className="mx-auto max-w-4xl px-4">
         <SectionHeader
           eyebrow="Questions"
@@ -593,7 +613,7 @@ function FAQSection() {
 
 function CTA() {
   return (
-    <section className="relative py-10 md:py-10">
+    <section className="relative py-5 md:py-10">
       <div className="mx-auto max-w-5xl px-4">
         <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-[var(--gradient-brand)] p-10 text-center md:p-16">
           <div className="pointer-events-none absolute inset-0 grid-pattern opacity-25" />
@@ -603,7 +623,7 @@ function CTA() {
               Have an idea? Let's build it right.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-pretty text-foreground/85 md:text-lg">
-              Book a free 30-minute consultation with our engineering leads. We'll return a scoped plan within 48 hours.
+              Book a free 30 minute consultation with our engineering leads. We'll return a scoped plan within 48 hours.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-lg hover:-translate-y-0.5">

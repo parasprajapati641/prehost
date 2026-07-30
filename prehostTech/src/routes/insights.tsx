@@ -47,7 +47,7 @@ function InsightsPage() {
       <PageHero
         eyebrow="Insights & essays"
         title={<>Playbooks from the <span className="text-gradient">delivery floor</span></>}
-        description="No thought-leadership fluff. Just the patterns, tools and mistakes behind our recent projects."
+        description="No thought leadership fluff. Just the patterns, tools and mistakes behind our recent projects."
       />
 
       <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">

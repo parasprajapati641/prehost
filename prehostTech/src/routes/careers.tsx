@@ -32,7 +32,7 @@ const BENEFITS = [
   { icon: Building2, title: "Office-based", desc: "Work from our office and collaborate closely with the team" },
   { icon: Heart, title: "Real health cover", desc: "Comprehensive health & wellness stipend, wherever you live." },
   // { icon: GraduationCap, title: "Learning budget", desc: "$2,000/year for courses, books and conferences." },
-  { icon: Coffee, title: "Workspace stipend", desc: "office or coworking budget — your call." },
+  { icon: Coffee, title: "Workspace stipend", desc: "office or coworking budget your call." },
   { icon: Sparkles, title: "Equity for seniors", desc: "Meaningful ownership for staff and above." },
   { icon: Clock, title: "Sane hours", desc: "Sustainable pace. No hero mode, no permanent on-call." },
 ];
@@ -43,10 +43,10 @@ function CareersPage() {
       <PageHero
         eyebrow="Careers"
         title={<>Build the <span className="text-gradient">next 100 products</span> with us</>}
-        description="We hire senior engineers, designers and product leaders who care about craft. Remote-first, timezone-friendly, and built to last."
+        description="We hire senior engineers, designers and product leaders who care about craft. Remote first, timezone friendly, and built to last."
       />
 
-      <section className="mx-auto max-w-7xl px-4">
+      {/* <section className="mx-auto max-w-7xl px-4">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4 pt-5">
           <div>
             <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">Open positions</div>
@@ -77,9 +77,9 @@ function CareersPage() {
             </motion.a>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      <section className="mx-auto mt-24 max-w-7xl px-4 md:mt-32">
+      <section className="mx-auto mt-10 max-w-7xl px-4 md:mt-1">
         <div className="mb-10 text-center">
           <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">Benefits</div>
           <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Built for people who plan to stay</h2>

@@ -38,8 +38,8 @@ function AboutPage() {
     <>
       <PageHero
         eyebrow="Our story"
-        title={<>Engineering partners for a <span className="text-gradient">software-defined world</span></>}
-        description="Prehost Technology was founded in 2019 to give ambitious teams the delivery quality of a Silicon Valley studio with the reliability of an in-house team."
+        title={<>Engineering partners for a <span className="text-gradient">software defined world</span></>}
+        description="Prehost Technology was founded in 2019 to give ambitious teams the delivery quality of a Silicon Valley studio with the reliability of an in house team."
       />
 
       <section className="mx-auto max-w-7xl px-4 pt-5">

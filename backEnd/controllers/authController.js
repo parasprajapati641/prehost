@@ -44,12 +44,18 @@ exports.register = async (req, res) => {
                     lastName: newUser.lastName,
                },
                process.env.JWT_SECRET,
-               { expiresIn: "1h" }
+               { expiresIn: "2d" }
           );
 
 
           return res.status(201).json({
-               message: "User registered successfully"
+               message: "User registered successfully",
+               token,
+               user: {
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    email: user.email
+               }
           });
      }
      catch (error) {

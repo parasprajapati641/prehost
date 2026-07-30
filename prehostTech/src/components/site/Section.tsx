@@ -48,7 +48,7 @@ export function PageHero({
   description: ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden pt-36 pb-16 md:pt-44 md:pb-24">
+    <section className="relative overflow-hidden pt-24 pb-10 md:pt-30 md:pb-20">
       <div className="pointer-events-none absolute inset-0 bg-mesh opacity-70" />
       <div className="pointer-events-none absolute inset-0 grid-pattern opacity-30 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="relative mx-auto max-w-5xl px-4 text-center">
