@@ -32,14 +32,54 @@ const STATS = [
 ];
 
 const SERVICES = [
-  { icon: Code2, title: "Software Engineering", desc: "Web, mobile and enterprise apps engineered for scale and clarity.", items: ["Web Applications", "Mobile Apps", "Custom Software", "Enterprise Solutions"] },
-  { icon: Cpu, title: "AI & Machine Learning", desc: "From LLM copilots to intelligent automation and predictive systems.", items: ["AI Development", "ML Solutions", "Automation", "LangChain / RAG"] },
-  { icon: Cloud, title: "Cloud & DevOps", desc: "Production grade infra on AWS, GCP and Azure resilient by design.", items: ["Cloud Architecture", "API Development", "Backend Engineering", "DevOps & SRE"] },
-  { icon: Palette, title: "Design & Brand", desc: "Product design that users love and brand systems that scale.", items: ["UI/UX Design", "Brand Identity", "Motion Graphics", "Video Editing"] },
-  { icon: Megaphone, title: "Digital Growth", desc: "SEO, performance and social growth engines that compound.", items: ["SEO", "Performance Marketing", "Social Media", "Content Strategy"] },
-  { icon: ShoppingCart, title: "Commerce & Platforms", desc: "Marketplaces and storefronts on Shopify, WordPress and Magento.", items: ["E-commerce", "Shopify", "WordPress", "Magento"] },
-  { icon: LifeBuoy, title: "Maintenance & Support", desc: "SLA-backed support, monitoring and continuous improvement.", items: ["24/7 Support", "Monitoring", "Performance Tuning", "Security Audits"] },
-  { icon: Users, title: "Dedicated Teams", desc: "Vetted engineers embedded in your workflow — remote-first.", items: ["Staff Augmentation", "Product Squads", "IT Consulting", "CTO as a Service"] },
+  {
+    icon: Code2,
+    title: "Software Development",
+    desc: "Scalable web, mobile, and custom software solutions.",
+    items: ["Web Apps", "Mobile Apps", "Custom Software", "Enterprise Solutions"]
+  },
+  {
+    icon: Cpu,
+    title: "AI Solutions",
+    desc: "AI-powered applications, automation, and intelligent systems.",
+    items: ["AI Development", "LLM & RAG", "Machine Learning", "Automation"]
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & DevOps",
+    desc: "Secure cloud infrastructure and modern deployment pipelines.",
+    items: ["Cloud", "DevOps", "API Development", "Backend"]
+  },
+  {
+    icon: Palette,
+    title: "UI/UX Design",
+    desc: "Beautiful, intuitive, and user-focused digital experiences.",
+    items: ["UI Design", "UX Design", "Branding", "Prototyping"]
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-commerce",
+    desc: "High-performance online stores and commerce solutions.",
+    items: ["Shopify", "WooCommerce", "Magento", "WordPress"]
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    desc: "Grow your business with SEO and performance marketing.",
+    items: ["SEO", "Google Ads", "Social Media", "Content Marketing"]
+  },
+  {
+    icon: LifeBuoy,
+    title: "Support & Maintenance",
+    desc: "Reliable maintenance, updates, and long-term technical support.",
+    items: ["Maintenance", "Security", "Optimization", "Bug Fixes"]
+  },
+  {
+    icon: Users,
+    title: "IT Consulting",
+    desc: "Technology consulting to help businesses build the right solutions.",
+    items: ["Consulting", "Architecture", "Strategy", "Planning"]
+  },
 ];
 
 const INDUSTRIES = [

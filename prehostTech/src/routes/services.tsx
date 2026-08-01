@@ -18,14 +18,101 @@ export const Route = createFileRoute("/services")({
 });
 
 const SERVICES = [
-  { icon: Code2, title: "Software Engineering", desc: "Web, mobile and enterprise applications engineered for scale, clarity and long-term ownership.", items: ["Website Development", "Web Applications", "Mobile Apps (iOS/Android)", "Custom Software", "Enterprise Solutions"] },
-  { icon: Cpu, title: "AI & Machine Learning", desc: "From LLM copilots to computer vision and predictive systems production-ready AI.", items: ["LLM & RAG Systems", "AI Development", "Machine Learning", "Intelligent Automation", "Python AI"] },
-  { icon: Cloud, title: "Cloud & Platform Engineering", desc: "Reliable, observable, cost-aware infra on AWS, GCP, Azure and Cloudflare.", items: ["Cloud Architecture", "API Development", "Backend Engineering", "Frontend Engineering", "DevOps & SRE"] },
-  { icon: Palette, title: "Design & Brand", desc: "Product design that users love and brand systems that scale across every touchpoint.", items: ["UI/UX Design", "Brand Identity", "Graphic Design", "Motion Graphics", "Video Editing"] },
-  { icon: Megaphone, title: "Digital Growth", desc: "Compounding growth engines: SEO, paid, social and content with clear attribution.", items: ["SEO", "Performance Marketing", "Social Media", "Content Strategy"] },
-  { icon: ShoppingCart, title: "Commerce & Marketplaces", desc: "Headless commerce, marketplaces and storefronts on the platforms you already use.", items: ["E-commerce Development", "Shopify", "WordPress", "Magento", "Marketplace Solutions"] },
-  { icon: LifeBuoy, title: "Maintenance & Support", desc: "SLA backed support, monitoring and continuous improvement after launch.", items: ["24/7 Support", "Monitoring & Observability", "Performance Tuning", "Security Audits", "IT Consulting"] },
-  { icon: Users, title: "Dedicated Development Teams", desc: "Vetted engineers embedded in your workflow remote-first, timezone-friendly.", items: ["Staff Augmentation", "Product Squads", "CTO as a Service", "Fractional Engineering Leadership"] },
+  {
+    icon: Code2,
+    title: "Software Development",
+    desc: "Custom web, mobile, and enterprise solutions built for performance, scalability, and long-term success.",
+    items: [
+      "Website Development",
+      "Web Applications",
+      "Mobile App Development",
+      "Custom Software",
+      "Enterprise Solutions"
+    ]
+  },
+  {
+    icon: Cpu,
+    title: "AI & Machine Learning",
+    desc: "Intelligent AI-powered solutions that automate processes and improve business efficiency.",
+    items: [
+      "AI Development",
+      "LLM & RAG Systems",
+      "Machine Learning",
+      "Computer Vision",
+      "Intelligent Automation"
+    ]
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & Backend Solutions",
+    desc: "Secure cloud infrastructure, scalable APIs, and modern backend systems for growing businesses.",
+    items: [
+      "Cloud Architecture",
+      "Backend Development",
+      "API Development",
+      "DevOps",
+      "Cloud Deployment"
+    ]
+  },
+  {
+    icon: Palette,
+    title: "UI/UX & Branding",
+    desc: "Beautiful, user-focused designs that strengthen your brand and improve customer experience.",
+    items: [
+      "UI/UX Design",
+      "Brand Identity",
+      "Graphic Design",
+      "Motion Graphics",
+      "Prototyping"
+    ]
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    desc: "Data-driven marketing strategies to grow your online presence and generate quality leads.",
+    items: [
+      "SEO",
+      "Social Media Marketing",
+      "Performance Marketing",
+      "Content Marketing"
+    ]
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-commerce Solutions",
+    desc: "Custom online stores and e-commerce platforms designed to increase sales and customer engagement.",
+    items: [
+      "Shopify",
+      "WooCommerce",
+      "WordPress",
+      "Magento",
+      "Custom E-commerce"
+    ]
+  },
+  {
+    icon: LifeBuoy,
+    title: "Maintenance & Support",
+    desc: "Reliable maintenance, security updates, and ongoing technical support after project delivery.",
+    items: [
+      "Application Maintenance",
+      "Performance Optimization",
+      "Security Updates",
+      "Bug Fixes",
+      "Technical Support"
+    ]
+  },
+  {
+    icon: Users,
+    title: "IT Consulting",
+    desc: "Expert technology consulting to help businesses choose the right solutions and accelerate digital transformation.",
+    items: [
+      "Technology Consulting",
+      "Architecture Planning",
+      "Digital Transformation",
+      "Project Planning",
+      "Technical Strategy"
+    ]
+  },
 ];
 
 function ServicesPage() {

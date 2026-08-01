@@ -148,12 +148,17 @@ const TECH = [
     cat: "CMS & E-commerce",
     items: [
       "WordPress",
-      "Strapi",
-      "Sanity",
-      "Contentful",
       "Shopify",
+      "Shopify Plus",
       "WooCommerce",
-      "Magento"
+      "Magento (Adobe Commerce)",
+      "BigCommerce",
+      "Strapi",
+      "Contentful",
+      "Sanity",
+      "Webflow",
+      "Wix",
+      "Squarespace"
     ]
   },
   {

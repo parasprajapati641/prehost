@@ -18,10 +18,26 @@ export const Route = createFileRoute("/about")({
 });
 
 const VALUES = [
-  { icon: Sparkles, title: "Craft over volume", desc: "Fewer, better engagements. Every team member is senior and hand-picked." },
-  { icon: Rocket, title: "Ship, then improve", desc: "Working software on day 14, not a slide deck on day 60." },
-  { icon: Globe2, title: "Remote-first, global", desc: "Teams across four continents so we're always ready when you are." },
-  { icon: Heart, title: "Human partnership", desc: "You get the same team from kickoff through year three. No swaps." },
+  {
+    icon: Sparkles,
+    title: "Quality First",
+    desc: "We focus on delivering high-quality solutions with clean code, attention to detail, and long-term reliability."
+  },
+  {
+    icon: Rocket,
+    title: "Fast Delivery",
+    desc: "We follow agile development to deliver projects quickly without compromising quality."
+  },
+  {
+    icon: Globe2,
+    title: "Global Client Focus",
+    desc: "We proudly serve clients worldwide with reliable communication, transparency, and timely project delivery."
+  },
+  {
+    icon: Heart,
+    title: "Long-Term Partnership",
+    desc: "We build lasting relationships by providing continuous support, trust, and value beyond project delivery."
+  },
 ];
 
 const TIMELINE = [

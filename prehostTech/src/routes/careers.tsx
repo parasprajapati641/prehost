@@ -17,26 +17,44 @@ export const Route = createFileRoute("/careers")({
   component: CareersPage,
 });
 
-const ROLES = [
-  { title: "Senior Full-Stack Engineer", team: "Engineering", loc: "Remote (Global)", type: "Full-time" },
-  { title: "Staff AI Engineer (LLM / RAG)", team: "AI & ML", loc: "Remote (EU / MENA)", type: "Full-time" },
-  { title: "Senior Product Designer", team: "Design", loc: "Remote (Global)", type: "Full-time" },
-  { title: "DevOps / Platform Engineer", team: "Cloud", loc: "Remote (EU / APAC)", type: "Full-time" },
-  { title: "Mobile Engineer (iOS/Android)", team: "Engineering", loc: "Remote (Global)", type: "Full-time" },
-  { title: "Engineering Manager", team: "Engineering", loc: "Remote (EU)", type: "Full-time" },
-  { title: "Growth & Performance Marketer", team: "Growth", loc: "Remote (Global)", type: "Full-time" },
-  { title: "Software Engineering Intern", team: "Engineering", loc: "Remote", type: "Internship" },
-];
+// const ROLES = [
+//   { title: "Senior Full-Stack Engineer", team: "Engineering", loc: "Remote (Global)", type: "Full-time" },
+//   { title: "Staff AI Engineer (LLM / RAG)", team: "AI & ML", loc: "Remote (EU / MENA)", type: "Full-time" },
+//   { title: "Senior Product Designer", team: "Design", loc: "Remote (Global)", type: "Full-time" },
+//   { title: "DevOps / Platform Engineer", team: "Cloud", loc: "Remote (EU / APAC)", type: "Full-time" },
+//   { title: "Mobile Engineer (iOS/Android)", team: "Engineering", loc: "Remote (Global)", type: "Full-time" },
+//   { title: "Engineering Manager", team: "Engineering", loc: "Remote (EU)", type: "Full-time" },
+//   { title: "Growth & Performance Marketer", team: "Growth", loc: "Remote (Global)", type: "Full-time" },
+//   { title: "Software Engineering Intern", team: "Engineering", loc: "Remote", type: "Internship" },
+// ];
 
 const BENEFITS = [
-  { icon: Building2, title: "Office-based", desc: "Work from our office and collaborate closely with the team" },
-  { icon: Heart, title: "Real health cover", desc: "Comprehensive health & wellness stipend, wherever you live." },
-  // { icon: GraduationCap, title: "Learning budget", desc: "$2,000/year for courses, books and conferences." },
-  { icon: Coffee, title: "Workspace stipend", desc: "office or coworking budget your call." },
-  { icon: Sparkles, title: "Equity for seniors", desc: "Meaningful ownership for staff and above." },
-  { icon: Clock, title: "Sane hours", desc: "Sustainable pace. No hero mode, no permanent on-call." },
+  {
+    icon: Building2,
+    title: "Office-Based Environment",
+    desc: "Collaborate with experienced professionals in a productive office workspace."
+  },
+  {
+    icon: GraduationCap,
+    title: "Career Growth",
+    desc: "Opportunities to learn new technologies and grow your skills through real-world projects."
+  },
+  {
+    icon: Coffee,
+    title: "Friendly Workplace",
+    desc: "A positive, supportive, and collaborative team culture."
+  },
+  {
+    icon: Sparkles,
+    title: "Modern Technologies",
+    desc: "Work with the latest tools and technologies to build innovative digital solutions."
+  },
+  {
+    icon: Clock,
+    title: "Work-Life Balance",
+    desc: "Structured working hours that promote productivity and personal well-being."
+  },
 ];
-
 function CareersPage() {
   return (
     <>
