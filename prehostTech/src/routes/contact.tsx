@@ -134,7 +134,7 @@ function ContactPage() {
             )}
           </motion.div>
 
-          <div className="space-y-6.5">
+          <div className="lg:space-y-6.5 space-y-4">
             <InfoCard icon={Mail} label="Email" value="prehost9@gmail.com" />
             <InfoCard icon={Phone} label="Phone" value="+91 79904 86335" />
             <InfoCard icon={MapPin} label="Head office" value="Time Trade Centre, 275, Vesu Canal Rd, opposite polaris, Magob, puna, Surat, Gujarat 395010" />
@@ -205,7 +205,7 @@ function ContactPage() {
             <iframe
               title="Prehost Office Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.8773632712673!2d72.8724829088464!3d21.197030180413343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3c200733af%3A0x1381040cfe6c2e42!2sPrehost%20Technology!5e0!3m2!1sen!2sin!4v1784922856509!5m2!1sen!2sin"
-              className="w-full aspect-[4/3] h-100"
+              className="w-full aspect-[4/3] md:h-100 h-auto"
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen

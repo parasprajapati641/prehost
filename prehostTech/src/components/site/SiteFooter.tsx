@@ -98,7 +98,7 @@
                   },
                   {
                     Icon: Github,
-                    link: "https://github.com/parasprajapati641",
+                    link: "https://www.linkedin.com/company/prehost-technology",
                     label: "GitHub",
                   },
                   {

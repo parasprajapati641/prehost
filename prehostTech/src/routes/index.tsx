@@ -141,15 +141,48 @@ const WHY = [
 // };
 
 const PROJECTS = [
-  { title: "Meridian Health", tag: "Healthcare Platform", desc: "Telemedicine + EHR for 40k clinicians across 3 continents.", palette: "from-blue-500/60 to-cyan-400/40" },
-  { title: "Nova AI", tag: "AI SaaS Dashboard", desc: "GPT-powered analytics copilot with real-time embeddings.", palette: "from-indigo-500/60 to-fuchsia-400/40" },
-  { title: "Vanta CRM", tag: "Sales Platform", desc: "Custom CRM replacing legacy Salesforce for a fintech.", palette: "from-emerald-500/60 to-cyan-400/40" },
-  { title: "OrbitERP", tag: "Enterprise ERP", desc: "Manufacturing ERP unifying 12 factories into one system.", palette: "from-orange-500/60 to-rose-400/40" },
-  { title: "Kart Commerce", tag: "E-commerce", desc: "Headless commerce doing $60M+ GMV, 200ms p95 checkout.", palette: "from-cyan-500/60 to-blue-400/40" },
-  { title: "Atlas LMS", tag: "Learning Platform", desc: "Adaptive learning for 1M+ students with AI tutors.", palette: "from-violet-500/60 to-blue-400/40" },
-  // { title: "TableOne", tag: "Restaurant Platform", desc: "POS + reservations SaaS for 3k independent restaurants.", palette: "from-rose-500/60 to-orange-400/40" },
-  // { title: "Estate Nexus", tag: "Real Estate Portal", desc: "Marketplace with 3D tours, valuations and mortgage flow.", palette: "from-sky-500/60 to-indigo-400/40" },
-  // { title: "Ledger Finance", tag: "Finance Dashboard", desc: "Realtime treasury dashboard for multi-currency ops.", palette: "from-teal-500/60 to-green-400/40" },
+  {
+    title: "SHUBH LIBAAS",
+    tag: "Fashion E-commerce",
+    desc: "A modern fashion platform dedicated to Indian ethnic and contemporary women's wear. SHUBH LIBAAS blends traditional craftsmanship with modern design, offering stylish, high-quality, and affordable fashion through a seamless online shopping experience.",
+    metric: "Ethnic Fashion",
+    image: "/projects/shubhLibaas.png",
+  },
+  {
+    title: "XPOD",
+    tag: "Gym Management Platform",
+    desc: "A smart gym management platform that helps users discover nearby gyms, book time slots, manage wallet-based payments, and track attendance using AI-powered facial recognition. The platform streamlines gym operations while delivering a seamless fitness experience.",
+    metric: "Smart Fitness",
+    image: "/projects/pod.png",
+  },
+  {
+    title: "HR SIMPLIFY",
+    tag: "HR Management Platform",
+    desc: "A comprehensive HR management platform designed to streamline workforce operations with features including attendance tracking, leave management, payroll processing, salary calculations, task management, face recognition, and employee performance tools—all within a single, intuitive system.",
+    metric: "All-in-One HR Suite",
+    image: "/projects/hr-simplify.png",
+  },
+  {
+    title: "Poly9",
+    tag: "Spatial Commerce",
+    desc: "A cutting-edge spatial commerce platform that transforms product presentation through interactive 3D experiences. It empowers businesses to create immersive digital showrooms, engage customers, and efficiently manage product content across their supply chain.",
+    metric: "3D Product Experience",
+    image: "/projects/poly9.png",
+  },
+  {
+    title: "ASTRA",
+    tag: "Educational Social Platform",
+    desc: "Astra is a new field of SNS specializing in educational support, and we thought about what it could do for children.By taking advantage of the characteristics of SNS and collecting people's thoughts and money flow, we support facility management and We will create a new form of support through things, things, and communities'' for children.",
+    metric: "Education & Community",
+    image: "/projects/astra.png",
+  },
+  {
+    title: "The Liferoom Archive",
+    tag: "Digital Legacy Platform",
+    desc: "A full-stack web application designed to preserve personal stories and digital legacies. Built with a focus on secure authentication, scalable backend architecture, intuitive user experience, and high-performance data management.",
+    metric: "Full-Stack MVP",
+    image: "/projects/liferoom-archive.png",
+  },
 ];
 
 const PROCESS = [
@@ -244,7 +277,7 @@ function Hero() {
       <div className="pointer-events-none absolute right-[12%] top-[26rem] hidden lg:block">
         <FloatingCard delay={3}>
           <div className="flex items-center gap-3">
-            <div className="grid h-9 w-9 place-items-center rounded-lg bg-accent/25 text-accent"><Shield className="h-4 w-4" /></div>
+            <div className="grid h-9 w-9 place-items-center rounded-lg bg-accent/25 text-primary"><Shield className="h-4 w-4" /></div>
             <div>
               <div className="text-xs text-muted-foreground">Security</div>
               <div className="text-sm font-semibold">SOC 2 Type II</div>
@@ -498,15 +531,22 @@ function Portfolio() {
               transition={{ duration: 0.5, delay: i * 0.03 }}
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition hover:-translate-y-1 hover:border-white/20"
             >
-              <div className={`relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br ${p.palette}`}>
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br">
+              {p.image && (
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              )}
                 <div className="absolute inset-0 grid-pattern opacity-40 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
-                <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-black/30 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
+                <div className="absolute left-6 top-6 rounded-full border border-white/20  px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary backdrop-blur">
                   {p.tag}
                 </div>
                 <div className="absolute inset-x-6 bottom-6">
-                  <div className="text-xl font-bold text-white">{p.title}</div>
-                  <p className="mt-1 text-xs text-white/80">{p.desc}</p>
+                  <div className="text-xl font-bold text-black">{p.title}</div>
+                  <p className="mt-1 text-xs text-black/80">{p.desc}</p>
                 </div>
               </div>
             </motion.div>
