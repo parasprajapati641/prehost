@@ -142,25 +142,25 @@ const WHY = [
 
 const PROJECTS = [
   {
-    title: "SHUBH LIBAAS",
-    tag: "Fashion E-commerce",
-    desc: "A modern fashion platform dedicated to Indian ethnic and contemporary women's wear. SHUBH LIBAAS blends traditional craftsmanship with modern design, offering stylish, high-quality, and affordable fashion through a seamless online shopping experience.",
-    metric: "Ethnic Fashion",
-    image: "/projects/shubhLibaas.png",
+    title: "Reactify",
+    tag: "Web3 Social Platform",
+    desc: "A modern Web3 social platform that enables users to create posts, engage with communities, and manage digital assets through an integrated wallet. Built with responsive UI, secure API integration, reward tracking, and real-time transaction ledger management.",
+    metric: "Web3 Ecosystem",
+    image: "/projects/reactify.png",
   },
   {
-    title: "XPOD",
-    tag: "Gym Management Platform",
-    desc: "A smart gym management platform that helps users discover nearby gyms, book time slots, manage wallet-based payments, and track attendance using AI-powered facial recognition. The platform streamlines gym operations while delivering a seamless fitness experience.",
-    metric: "Smart Fitness",
-    image: "/projects/pod.png",
+    title: "Sophifino",
+    tag: "Luxury Fashion Store",
+    desc: "A modern fashion e-commerce platform built to showcase premium apparel collections through an elegant user experience, intuitive product discovery, secure payments, and a responsive shopping journey across all devices.",
+    metric: "Global E-commerce",
+    image: "/projects/sophifino.png",
   },
   {
-    title: "HR SIMPLIFY",
-    tag: "HR Management Platform",
-    desc: "A comprehensive HR management platform designed to streamline workforce operations with features including attendance tracking, leave management, payroll processing, salary calculations, task management, face recognition, and employee performance tools—all within a single, intuitive system.",
-    metric: "All-in-One HR Suite",
-    image: "/projects/hr-simplify.png",
+    title: "The Liferoom Archive",
+    tag: "Digital Legacy Platform",
+    desc: "A full-stack web application designed to preserve personal stories and digital legacies. Built with a focus on secure authentication, scalable backend architecture, intuitive user experience, and high-performance data management.",
+    metric: "Full-Stack MVP",
+    image: "/projects/liferoom-archive.png",
   },
   {
     title: "Poly9",
@@ -170,18 +170,18 @@ const PROJECTS = [
     image: "/projects/poly9.png",
   },
   {
-    title: "ASTRA",
-    tag: "Educational Social Platform",
-    desc: "Astra is a new field of SNS specializing in educational support, and we thought about what it could do for children.By taking advantage of the characteristics of SNS and collecting people's thoughts and money flow, we support facility management and We will create a new form of support through things, things, and communities'' for children.",
-    metric: "Education & Community",
-    image: "/projects/astra.png",
+    title: "SHUBH LIBAAS",
+    tag: "Fashion E-commerce",
+    desc: "A modern fashion platform dedicated to Indian ethnic and contemporary women's wear. SHUBH LIBAAS blends traditional craftsmanship with modern design, offering stylish, high-quality, and affordable fashion through a seamless online shopping experience.",
+    metric: "Ethnic Fashion",
+    image: "/projects/shubhLibaas.png",
   },
   {
-    title: "The Liferoom Archive",
-    tag: "Digital Legacy Platform",
-    desc: "A full-stack web application designed to preserve personal stories and digital legacies. Built with a focus on secure authentication, scalable backend architecture, intuitive user experience, and high-performance data management.",
-    metric: "Full-Stack MVP",
-    image: "/projects/liferoom-archive.png",
+    title: "ASTRA",
+    tag: "Educational Social Platform",
+    desc: "Astra is a new field of SNS specializing in educational support, and we thought about what it could do for children.By taking advantage of the characteristics of SNS and collecting people's thoughts and money flow, we support facility management and We will create a new form of support through things, things, and communities for children.",
+    metric: "Education & Community",
+    image: "/projects/astra.png",
   },
 ];
 
@@ -523,33 +523,79 @@ function Portfolio() {
         />
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
-            <motion.div
+            <Link
+              to="/portfolio"
               key={p.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: i * 0.03 }}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition hover:-translate-y-1 hover:border-white/20"
+              className="block"
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br">
-              {p.image && (
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              )}
-                <div className="absolute inset-0 grid-pattern opacity-40 mix-blend-overlay" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
-                <div className="absolute left-6 top-6 rounded-full border border-white/20  px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary backdrop-blur">
-                  {p.tag}
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.03 }}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition hover:-translate-y-1 hover:border-white/20"
+              >
+                {/* <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br">
+                  {p.image && (
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  )}
+                  <div className="absolute inset-0 grid-pattern opacity-40 mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                  <div className="absolute left-6 top-6 rounded-full border border-white/20  px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary backdrop-blur">
+                    {p.tag}
+                  </div>
+                  <div className="absolute inset-x-6 bottom-6">
+                    <div className="text-xl font-bold text-black">{p.title}</div>
+                    <p className="mt-1 text-xs text-black/80">{p.desc}</p>
+                  </div>
+                </div> */}
+
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                  <div className="absolute left-5 top-5 flex gap-2">
+                    <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white">
+                      {p.tag}
+                    </span>
+
+                    <span className="rounded-full bg-black/40 px-3 py-1 text-xs text-white backdrop-blur">
+                      {p.metric}
+                    </span>
+                  </div>
                 </div>
-                <div className="absolute inset-x-6 bottom-6">
-                  <div className="text-xl font-bold text-black">{p.title}</div>
-                  <p className="mt-1 text-xs text-black/80">{p.desc}</p>
+
+                <div className="space-y-4 p-6">
+                  <h3 className="text-xl font-bold transition group-hover:text-primary">
+                    {p.title}
+                  </h3>
+
+                  <p className="line-clamp-3 text-sm leading-6 text-muted-foreground">
+                    {p.desc}
+                  </p>
+
+                  <div className="flex items-center justify-between border-t border-border pt-4">
+                    <span className="font-semibold text-primary">
+                      View Details
+                    </span>
+
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 transition-all group-hover:bg-primary group-hover:text-white">
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
         <div className="mt-10 text-center">
@@ -680,7 +726,7 @@ function FAQSection() {
                 {f.q}
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-primary/30 bg-primary/5 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-open:rotate-45 group-open:bg-primary group-open:text-white">
                   +
-                </span>    
+                </span>
               </summary>
               <p className="mt-2 mb-2 px-6 max-w-3xl text-[15px] leading-7 text-muted-foreground">{f.a}</p>
             </details>
