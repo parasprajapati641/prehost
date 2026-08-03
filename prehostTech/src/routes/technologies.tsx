@@ -5,7 +5,7 @@ import { PageHero } from "@/components/site/Section";
 export const Route = createFileRoute("/technologies")({
   head: () => ({
     meta: [
-      { title: "Technologies — Prehost Technology" },
+      // { title: "Technologies — Prehost Technology" },
       { name: "description", content: "The modern engineering stack we use every day: React, Next.js, Node, Python, AWS, GCP, OpenAI, LangChain and more." },
       { property: "og:title", content: "Technologies — Prehost Technology" },
       { property: "og:description", content: "Frontend, backend, cloud, databases and AI — the stack behind our work." },
