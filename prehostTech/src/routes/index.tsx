@@ -289,9 +289,9 @@ function Hero() {
       <div className="relative mx-auto max-w-6xl px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground backdrop-blur"
+          className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-white/5 px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground backdrop-blur"
         >
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent animate-pulse-glow" />
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" />
           Silicon-Valley-grade engineering, delivered globally
         </motion.div>
 
@@ -318,7 +318,7 @@ function Hero() {
             Book Free Consultation
             <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
           </Link>
-          <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur hover:bg-white/10">
+          <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-white/5 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur hover:bg-white/10">
             View Portfolio
           </Link>
         </motion.div>
@@ -350,7 +350,7 @@ function FloatingCard({ children, delay = 0 }: { children: React.ReactNode; dela
 function Marquee() {
   const row = [...CLIENTS, ...CLIENTS];
   return (
-    <section className="relative border-y border-primary/10 bg-primar/[0.02] py-10">
+    <section className="relative border-y border-primary/10 bg-primary/2 py-10">
       <div className="mx-auto mb-6 max-w-7xl px-4">
         <p className="text-center text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
           Trusted by teams shipping to millions
@@ -384,7 +384,7 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="group glass relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-white/20 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.3)]"
+              className="group glass relative overflow-hidden p-6 transition hover:-translate-y-1 hover:border-primary/20 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.3)]"
             >
               {/* <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40  rounded-full bg-primary/55 opacity-0 blur-3xl transition group-hover:opacity-100" /> */}
               <>
@@ -460,7 +460,7 @@ function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.04 }}
-              className="group glass flex gap-4 p-6 hover:border-white transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
+              className="group glass flex gap-4 p-6 hover:border-primary/20 transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
             >
               <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-primary">
                 <w.icon className="h-5 w-5" />
@@ -521,6 +521,7 @@ function Portfolio() {
           title={<>Products shaping <span className="text-gradient">real industries</span></>}
           description="A cross section of what we've shipped in the last 24 months. Every case study is measured, real and referenceable."
         />
+        {/* layout 1 */}
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
             <Link
@@ -534,27 +535,8 @@ function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.03 }}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition hover:-translate-y-1 hover:border-white/20"
+                className="group relative overflow-hidden rounded-3xl border border-primary/20 bg-white/[0.03] transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)]"
               >
-                {/* <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br">
-                  {p.image && (
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  )}
-                  <div className="absolute inset-0 grid-pattern opacity-40 mix-blend-overlay" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
-                  <div className="absolute left-6 top-6 rounded-full border border-white/20  px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary backdrop-blur">
-                    {p.tag}
-                  </div>
-                  <div className="absolute inset-x-6 bottom-6">
-                    <div className="text-xl font-bold text-black">{p.title}</div>
-                    <p className="mt-1 text-xs text-black/80">{p.desc}</p>
-                  </div>
-                </div> */}
-
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={p.image}
@@ -598,6 +580,54 @@ function Portfolio() {
             </Link>
           ))}
         </div>
+
+        {/* layout 2 */}
+        {/* <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {PROJECTS.map((p, i) => (
+            <Link to="/portfolio" key={p.title}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="group relative overflow-hidden rounded-3xl"
+              >
+                <div className="relative h-[320px] w-full overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
+                </div>
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 group-hover:bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500">
+
+                  <span className="mb-2 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white">
+                    {p.tag}
+                  </span>
+
+                  <h3 className="text-xl font-bold text-white">
+                    {p.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm text-white/80 line-clamp-2">
+                    {p.desc}
+                  </p>
+
+                  <div className="mt-4 flex items-center gap-2 text-primary font-semibold">
+                    View Project
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+
+                <div className="absolute bottom-4 right-4 rounded-full bg-black/50 px-3 py-1 text-xs text-white backdrop-blur">
+                  {p.metric}
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+        </div> */}
+
         <div className="mt-10 text-center">
           <Link to="/portfolio" className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-5 py-2.5 text-sm font-semibold hover:bg-white/10 transition hover:-translate-y-0.5 shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)] hover:border-0">
             View all case studies <ArrowRight className="h-4 w-4" />
@@ -741,7 +771,7 @@ function CTA() {
   return (
     <section className="relative py-5 md:py-10">
       <div className="mx-auto max-w-5xl px-4">
-        <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-[var(--gradient-brand)] p-10 text-center md:p-16">
+        <div className="relative overflow-hidden rounded-4xl border border-primary/50 bg-[var(--gradient-brand)] p-10 text-center md:p-16">
           <div className="pointer-events-none absolute inset-0 grid-pattern opacity-25" />
           <div className="pointer-events-none absolute -inset-32 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.35),transparent_60%)]" />
           <div className="relative">

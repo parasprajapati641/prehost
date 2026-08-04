@@ -72,7 +72,42 @@ const PROJECTS = [
     tag: "Gym Management Platform",
     desc: "A smart gym management platform that helps users discover nearby gyms, book time slots, manage wallet-based payments, and track attendance using AI-powered facial recognition. The platform streamlines gym operations while delivering a seamless fitness experience.",
     metric: "Smart Fitness",
-    image: "/projects/pod.png",
+    image: "/projects/xpod.png",
+  },
+  {
+    title: "AI - VOICE",
+    tag: "Enterprise AI Voice Solutions",
+    desc: "A next-generation AI voice platform that empowers businesses with intelligent voice automation, conversational AI, and data-driven insights. Features secure integrations, real-time speech processing, advanced analytics, and seamless user experiences across web and mobile applications.",
+    metric: "Conversational AI",
+    image: "/projects/realtalkr.png",
+  },
+  {
+    title: "Vvveb",
+    tag: "Website Builder & CMS Platform",
+    desc: "A modern website builder and CMS platform that enables users to create websites, manage themes, customize fonts, and publish content with ease. Built with responsive UI, drag-and-drop editing, ActivityPub integration, and flexible design tools for developers and businesses.",
+    metric: "Website Builder",
+    image: "/projects/vvveb.png",
+  },
+  {
+    title: "CPAT",
+    tag: "Government Examination Portal",
+    desc: "A secure USA government examination platform designed for public candidates to register, verify eligibility, and participate in officially scheduled exams. Built with a responsive interface, secure authentication, test date management, and streamlined assessment workflows to ensure a reliable and efficient examination experience.",
+    metric: "Government Assessment",
+    image: "/projects/usaid.png",
+  },
+  {
+    title: "Care Atlas",
+    tag: "Digital Healthcare Referral System",
+    desc: "A modern healthcare platform designed to simplify patient referrals, specialist coordination, and care management through a secure and intuitive interface. Features streamlined referral tracking, appointment management, patient record integration, and scalable architecture to improve collaboration across healthcare providers.",
+    metric: "HealthTech Solution",
+    image: "/projects/careatlas.png",
+  },
+  {
+    title: "JoyZap",
+    tag: "Digital Gift & Rewards Platform",
+    desc: "A secure digital gifting platform that enables users to send, receive, and manage virtual gifts with real monetary value. Built with a seamless user experience, secure wallet integration, transaction management, reward tracking, and scalable payment infrastructure for individuals and businesses.",
+    metric: "Digital Payments",
+    image: "/projects/joyzap.png",
   },
 ];
 
@@ -87,7 +122,7 @@ function PortfolioPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 pb-24 md:pb-32 pt-5">
-        <div className="space-y-24">
+        <div className="lg:space-y-24 space-y-10">
           {PROJECTS.map((p, i) => (
             <motion.article
               key={p.title}
@@ -107,7 +142,7 @@ function PortfolioPage() {
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="h-56 w-full object-cover transition duration-700 group-hover:scale-105 sm:h-72 lg:h-auto"
+                  className="h-auto w-full object-cover transition duration-700 group-hover:scale-105 sm:h-72 lg:h-auto"
                 />
               </div>
 
