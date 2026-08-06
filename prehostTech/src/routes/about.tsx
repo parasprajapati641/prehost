@@ -107,7 +107,7 @@ function AboutPage() {
       </section>
 
       <section className="relative py-16">
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-5xl px-4">
           <div className="mb-14 text-center">
             <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
               Leadership
@@ -145,16 +145,16 @@ function AboutPage() {
                   </div>
 
                   {/* Right */}
-                  <div>
+                  <div className="items-start text-center lg:text-left">
                     <span className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                       Founder & CEO
                     </span>
 
-                    <h2 className="mt-3 text-4xl font-bold lg:text-5xl">
+                    <h2 className="mt-3 text-2xl font-bold lg:text-3xl">
                       {f.name}
                     </h2>
 
-                    <p className="whitespace-pre-line mt-6 text-lg leading-8 text-muted-foreground">
+                    <p className="whitespace-pre-line mt-6 text-base leading-6 text-muted-foreground text-left">
                       {f.description}
                     </p>
 
@@ -162,41 +162,41 @@ function AboutPage() {
                       {f.expertise.map((item) => (
                         <span
                           key={item}
-                          className="rounded-full border border-primary/20 px-4 py-2 text-sm"
+                          className="rounded-full border border-primary/20 px-4 py-2 text-xs"
                         >
                           {item}
                         </span>
                       ))}
                     </div>
 
-                    <div className="mt-8 flex gap-4">
+                    <div className="mt-7 flex gap-4">
                       <a
                         href={f.linkedin}
                         target="_blank"
                         rel="noreferrer"
-                        className="rounded-xl border border-primary/20 px-5 py-3 transition hover:bg-primary hover:text-white"
+                        className="rounded-xl border border-primary/20 px-4 py-2 transition hover:bg-primary hover:text-white flex items-center text-primary"
                       >
-                        <Linkedin className="h-5 w-5" />
+                        <Linkedin className="h-4 w-4" />
                       </a>
 
                       <a
                         href={f.email}
-                        className="rounded-xl border border-primary/20 px-5 py-3 transition hover:bg-primary hover:text-white"
+                        className="rounded-xl border border-primary/20 px-4 py-2 transition hover:bg-primary hover:text-white flex items-center text-primary"
                       >
-                        <Mail className="h-5 w-5" />
+                        <Mail className="h-4 w-4" />
                       </a>
                       <a
                         href={f.instagram}
                         target="_blank"
                         rel="noreferrer"
-                        className="rounded-xl border border-primary/20 px-5 py-3 transition hover:bg-primary hover:text-white"
+                        className="rounded-xl border border-primary/20 px-4 py-2 transition hover:bg-primary hover:text-white flex items-center text-primary"
                       >
-                        <Instagram className="h-5 w-5" />
+                        <Instagram className="h-4 w-4" />
                       </a>
                     </div>
 
                     <div className="mt-10 border-l-4 border-primary pl-6">
-                      <p className="text-lg italic text-muted-foreground">
+                      <p className="text-sm italic text-muted-foreground">
                         "Every successful digital product starts with a vision, grows through innovation, and succeeds by creating real value."
                       </p>
 
@@ -212,7 +212,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-10 max-w-5xl px-4 md:mt-15">
+      <section className="mx-auto mt-5 max-w-5xl px-4 md:mt-10">
         <div className="mb-12 text-center">
           <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">Journey</div>
           <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">From three engineers to a global studio</h2>

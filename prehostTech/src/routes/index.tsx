@@ -43,8 +43,11 @@ const FOUNDERS = [
       "Paras Prajapati is the Founder & CEO of Prehost Technology and a Senior Full-Stack Developer with 6+ years of experience in building fast, scalable, and high-performing digital solutions. Focused on solving business challenges through modern technology, innovation, and impactful software products.",
     expertise: [
       "Full-Stack Development",
-      "Business Strategy",
-      "Product Vision",
+      "Custom Software Development",
+      "SaaS Development",
+      "Project Management",
+      "Business Growth",
+      "Leadership",
     ],
     email: "https://mail.google.com/mail/?view=cm&fs=1&to=prehost9@gmail.com",
     linkedin: "https://in.linkedin.com/in/paras-prajapati-4b9831235",
@@ -732,7 +735,7 @@ function Testimonials() {
 function Founders() {
   return (
     <section className="relative py-10 md:py-16">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-5xl px-4">
         <SectionHeader
           eyebrow="Leadership"
           title={
@@ -743,7 +746,7 @@ function Founders() {
           description="The vision behind building innovative digital solutions and technology driven growth."
         />
 
-        <div className="mt-14 space-y-10">
+        <div className="mt-10 space-y-10 md:mt-14">
           {FOUNDERS.map((f) => (
             <motion.div
               key={f.name}
@@ -753,7 +756,7 @@ function Founders() {
               transition={{ duration: 0.6 }}
               className="overflow-hidden rounded-3xl border border-primary bg-white shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)] transition hover:-translate-y-0.5 hover:border-primary/50"
             >
-              <div className="grid items-center gap-10 p-8 md:p-10 lg:grid-cols-[320px_1fr]">
+              <div className="grid items-center gap-10 p-6 md:p-8 lg:grid-cols-[320px_1fr]">
                 {/* Left */}
                 <div className="flex justify-center">
                   <div className="relative">
@@ -762,7 +765,7 @@ function Founders() {
                     <img
                       src={f.image}
                       alt={f.name}
-                      className="relative h-80 w-72 rounded-3xl object-cover shadow-xl"
+                      className="relative h-70 w-62 rounded-3xl object-cover shadow-xl"
                     />
                   </div>
                 </div>
@@ -773,15 +776,15 @@ function Founders() {
                     Leadership
                   </span>
 
-                  <h2 className="mt-4 text-4xl font-bold text-slate-900">
+                  <h2 className="mt-4 text-3xl font-bold text-slate-900">
                     {f.name}
                   </h2>
 
-                  <p className="mt-2 text-lg font-semibold text-primary">
+                  <p className="mt-2 text-base font-semibold text-primary">
                     {f.role}
                   </p>
 
-                  <p className="mt-6 max-w-2xl leading-8 text-slate-600">
+                  <p className="mt-6 max-w-2xl leading-8 text-slate-600 text-sm">
                     {f.description}
                   </p>
 
