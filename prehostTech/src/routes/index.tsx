@@ -5,6 +5,9 @@ import {
   Sparkles, Zap, Shield, Users, Rocket, Check, Star, Globe2, Building2,
   Heart, GraduationCap, Landmark, Home, ShoppingBag, Factory, Truck, Plane, UtensilsCrossed,
   HardHat, Scale, UserCog, Briefcase, Server, Wrench,
+  Mail,
+  Linkedin,
+  Instagram,
 } from "lucide-react";
 import { SectionHeader } from "@/components/site/Section";
 
@@ -29,6 +32,24 @@ const STATS = [
   { value: "150+", label: "Happy Clients" },
   { value: "30+", label: "Countries Served" },
   { value: "100%", label: "Client Satisfaction" },
+];
+
+const FOUNDERS = [
+  {
+    name: "Paras Prajapati",
+    role: "Founder & CEO",
+    image: "/founder/paras-prajapati.png",
+    description:
+      "Paras Prajapati is the Founder & CEO of Prehost Technology and a Senior Full-Stack Developer with 6+ years of experience in building fast, scalable, and high-performing digital solutions. Focused on solving business challenges through modern technology, innovation, and impactful software products.",
+    expertise: [
+      "Full-Stack Development",
+      "Business Strategy",
+      "Product Vision",
+    ],
+    email: "https://mail.google.com/mail/?view=cm&fs=1&to=prehost9@gmail.com",
+    linkedin: "https://in.linkedin.com/in/paras-prajapati-4b9831235",
+    instagram: "https://www.instagram.com/prehost_technology/",
+  },
 ];
 
 const SERVICES = [
@@ -236,6 +257,7 @@ function HomePage() {
       <Portfolio />
       <Process />
       <Testimonials />
+      <Founders />
       <Timeline />
       <FAQSection />
       <CTA />
@@ -700,6 +722,112 @@ function Testimonials() {
                 </div>
               </figcaption>
             </motion.figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Founders() {
+  return (
+    <section className="relative py-10 md:py-16">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeader
+          eyebrow="Leadership"
+          title={
+            <>
+              Meet Our <span className="text-gradient">Founder</span>
+            </>
+          }
+          description="The vision behind building innovative digital solutions and technology driven growth."
+        />
+
+        <div className="mt-14 space-y-10">
+          {FOUNDERS.map((f) => (
+            <motion.div
+              key={f.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="overflow-hidden rounded-3xl border border-primary bg-white shadow-[0_8px_24px_-8px_rgba(37,99,235,0.2)] transition hover:-translate-y-0.5 hover:border-primary/50"
+            >
+              <div className="grid items-center gap-10 p-8 md:p-10 lg:grid-cols-[320px_1fr]">
+                {/* Left */}
+                <div className="flex justify-center">
+                  <div className="relative">
+                    <div className="absolute inset-0 rounded-3xl bg-primary/10 blur-2xl"></div>
+
+                    <img
+                      src={f.image}
+                      alt={f.name}
+                      className="relative h-80 w-72 rounded-3xl object-cover shadow-xl"
+                    />
+                  </div>
+                </div>
+
+                {/* Right */}
+                <div>
+                  <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                    Leadership
+                  </span>
+
+                  <h2 className="mt-4 text-4xl font-bold text-slate-900">
+                    {f.name}
+                  </h2>
+
+                  <p className="mt-2 text-lg font-semibold text-primary">
+                    {f.role}
+                  </p>
+
+                  <p className="mt-6 max-w-2xl leading-8 text-slate-600">
+                    {f.description}
+                  </p>
+
+                  {/* Expertise */}
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    {f.expertise.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Social */}
+                  <div className="mt-10 flex gap-4">
+                    <a
+                      href={f.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+
+                    <a
+                      href={f.email}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+                    >
+                      <Mail className="h-5 w-5" />
+                    </a>
+                    <a
+                      href={f.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+                    >
+                      <Instagram className="h-5 w-5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
